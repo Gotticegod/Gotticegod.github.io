@@ -30,7 +30,7 @@ main {
 }
 
 .sidebar {
-    width: 220px;
+    width: 150px;
     flex-shrink: 0;
     background: rgba(255, 255, 255, 0.87);
     padding: 20px;
