@@ -32,7 +32,7 @@ main {
 }
 
 .sidebar {
-    width: 150px; /* taille fixe */
+    width: 200px; /* taille fixe */
     flex-shrink: 0; /* conserve la taille fixe */
     background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
     padding: 20px; /* écart entre bord et intérieur */
@@ -48,22 +48,52 @@ main {
     color: #2c3e50;
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
+/* Le bloc déroulant */
+details {
+    margin-bottom: 8px;
 }
 
-.sidebar li {
-    margin-bottom: 10px;
-}
-
-.sidebar a {
-    text-decoration: none;
+/* Le titre cliquable */
+summary {
+    cursor: pointer; /* main qui pointe au survol */
+    font-weight: bold;
+    padding: 6px 0;
+    list-style: none; /* enlève la petite flèche par défaut */
     color: #e74c3c;
 }
 
-.sidebar a:hover {
-    text-decoration: underline;
+/* La flèche personnalisée */
+summary::before {
+    content: "▶";              /* triangle fermé */
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 0.7em;
+    transition: transform 0.2s; /* rotation animée */
+}
+
+/* Quand ouvert : la flèche pivote */
+details[open] summary::before {
+    transform: rotate(90deg);  /* ▶ devient ▼ */
+}
+
+/* Les sous-liens */
+details ul {
+    list-style: none;
+    padding-left: 20px;        /* indenté sous le titre */
+    margin: 5px 0;
+}
+
+details li {
+    margin-bottom: 5px;
+}
+
+details a {
+    text-decoration: none;
+    color: rgb(223, 105, 92)
+}
+
+details a:hover {
+    color: #e74c3c;
 }
 
 @media (max-width: 768px) { /* si l'écran fait moins de 768px */
