@@ -51,7 +51,7 @@ h1 { color: #f9fbfc; }
 }
 
 .listeliens li {
-    list-style: decimal;
+    list-style-type: "⮚    "; 
     font-size: 1.2rem;
     margin-bottom: 5px;
     color: rgb(255, 255, 255);
@@ -61,7 +61,18 @@ h1 { color: #f9fbfc; }
     font-size: 1.3rem;
     color: rgb(255, 255, 255);
     font-style: italic;
-} 
+}
+.etapes h2 {
+    font-size: 1.4rem;
+    color: rgb(255, 255, 255);
+    font-style: bold;
+    text-decoration: underline;
+}  
+.etapes p {
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    font-style: normal;
+}  
 /* conteneur liste liens */
 
 main {
@@ -200,6 +211,7 @@ main {
     font-weight: bold;
 }
 .ingredients summary {
+    text-align: left;
     padding: 6px 0;
     list-style: none; /* enlève la petite flèche par défaut */
     color: #e74c3c;
@@ -207,10 +219,15 @@ main {
 }
 /* La flèche personnalisée */
 .ingredients summary::before {
-    content: "▶";              /* triangle fermé */
     display: inline-block;
     margin-right: 8px;
     font-size: 1.5rem;
+}
+/* Toutes les images dont le src contient "ingr/" */
+img[src*="ingr/"] {
+    width: 65px;
+    vertical-align: middle;
+    margin-right: 16px;
 }
 /* Ingrédients */
 
