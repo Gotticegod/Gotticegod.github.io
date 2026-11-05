@@ -15,8 +15,17 @@ body {
     color: white;
 }
 
+body h1 {
+    text-align: center;
+    border: 2px solid white;
+}
+
+body a {
+    text-align: center;
+    color: #e79991;
+}
+
 h1 { color: #f9fbfc; }
-a  { color: #e74c3c; }
 
 /* conteneur main & Sommaire */
 .conteneur {
@@ -27,6 +36,33 @@ a  { color: #e74c3c; }
     gap: 30px; /* écart entre les enfants du conteneur */
 }
 /* conteneur main & Sommaire */
+
+/* conteneur liste liens */
+.conteneurListe {
+    display: flex; /* mode flexbox > enfants directs côte à côte */
+    max-width: 1100px; /* largeur maxi conteneur */
+    margin: 0 auto; /* 0 marge haut/bas + auto centrage horizontal */
+    padding: 20px; /* écart entre bord conteneur et intérieur conteneur */
+    gap: 30px; /* écart entre les enfants du conteneur */
+}
+
+.listeliens {
+    margin-bottom: 60px;
+}
+
+.listeliens li {
+    list-style: decimal;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+}
+.listeliens a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+} 
+/* conteneur liste liens */
 
 main {
     flex: 1; /* prend tout l'espace restant après la sidebar */
@@ -66,7 +102,7 @@ main {
     font-weight: bold;
 }
 .listeR > ul > li > ul {
-    list-style: square;
+    list-style: circle;
     padding-left: 30px;        /* indenté sous le titre */
     margin: 2px 0;
     font-size: 1.4rem;
@@ -101,11 +137,11 @@ main {
     font-size: 4rem;
     color: #2c3e50;
 }
-details { /* Le bloc déroulant */
+.sidebar details { /* Le bloc déroulant */
     margin-bottom: 8px;
 }
 /* Le titre cliquable */
-summary {
+.sidebar summary {
     cursor: pointer; /* main qui pointe au survol */
     font-weight: bold;
     padding: 6px 0;
@@ -114,7 +150,7 @@ summary {
     font-size: 2rem;
 }
 /* La flèche personnalisée */
-summary::before {
+.sidebar summary::before {
     content: "▶";              /* triangle fermé */
     display: inline-block;
     margin-right: 8px;
@@ -122,35 +158,77 @@ summary::before {
     transition: transform 0.2s; /* rotation animée */
 }
 /* Quand ouvert : la flèche pivote */
-details[open] summary::before {
+.sidebar details[open] summary::before {
     transform: rotate(90deg);  /* ▶ devient ▼ */
 }
 /* Les sous-liens */
-details ul {
+.sidebar details ul {
     list-style: none;
     padding-left: 20px;        /* indenté sous le titre */
     margin: 5px 0;
 }
-details li {
+.sidebar details li {
     margin-bottom: 5px;
 }
-details a {
+.sidebar details a {
     text-decoration: none;
     color: rgb(223, 105, 92);
     font-size: 1.7rem;
 }
-details a:hover {
+.sidebar details a:hover {
     color: #e74c3c;
 }
 /* Sommaire */
 
+/* Ingrédients */
+.ingredients {
+    width: 500px; /* taille fixe */
+    flex-shrink: 0; /* conserve la taille fixe */
+    background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
+    padding: 20px; /* écart entre bord et intérieur */
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px; /* coins arrondis */
+    height: fit-content; /* hauteur s'ajuste au contenu */
+    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
+    top: 40px; /* position mini haut de l'écran */
+}
+.ingredients h2 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+.ingredients summary {
+    padding: 6px 0;
+    list-style: none; /* enlève la petite flèche par défaut */
+    color: #e74c3c;
+    font-size: 1.8rem;
+}
+/* La flèche personnalisée */
+.ingredients summary::before {
+    content: "▶";              /* triangle fermé */
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 1.5rem;
+}
+/* Ingrédients */
 
 @media (max-width: 768px) { /* si l'écran fait moins de 768px */
     .conteneur {
         flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
         padding: 10px;
     }
+    .conteneurListe {
+        flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
+        padding: 10px;
+    }
     .sidebar {
+        width: 100%; /* prend toute la largeur */
+        flex-shrink: 1; /* autorise de rétrécir */
+        position: static; /* désactive l'option sticky */
+    }
+    .ingredients {
         width: 100%; /* prend toute la largeur */
         flex-shrink: 1; /* autorise de rétrécir */
         position: static; /* désactive l'option sticky */
