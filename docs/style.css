@@ -4,7 +4,7 @@
 
 body {
     font-family: sans-serif; /*  */
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 40px auto;
     padding: 0 20px;
     line-height: 1.6;
@@ -30,7 +30,7 @@ h1 { color: #f9fbfc; }
 /* conteneur main & Sommaire */
 .conteneur {
     display: flex; /* mode flexbox > enfants directs côte à côte */
-    max-width: 1100px; /* largeur maxi conteneur */
+    max-width: 1400px; /* largeur maxi conteneur */
     margin: 0 auto; /* 0 marge haut/bas + auto centrage horizontal */
     padding: 20px; /* écart entre bord conteneur et intérieur conteneur */
     gap: 30px; /* écart entre les enfants du conteneur */
@@ -40,29 +40,57 @@ h1 { color: #f9fbfc; }
 /* conteneur liste liens */
 .conteneurListe {
     display: flex; /* mode flexbox > enfants directs côte à côte */
-    max-width: 1100px; /* largeur maxi conteneur */
+    max-width: 1400px; /* largeur maxi conteneur */
     margin: 0 auto; /* 0 marge haut/bas + auto centrage horizontal */
     padding: 20px; /* écart entre bord conteneur et intérieur conteneur */
     gap: 30px; /* écart entre les enfants du conteneur */
 }
+/* conteneur liste liens */
 
-.listeliens {
-    margin-bottom: 60px;
-    margin-left: 25px;
+
+/* conteneur tableau liste recettes */
+.tableauliens {
+    table-layout: fixed;    /* respecte les largeurs définies */
+    width: 100%;
+    background: rgba(204, 17, 17, 0.733); /* fond blanc avec 90% d'opacité */
+    padding: 20px; /* écart entre bord et intérieur */
+    border: 2px solid white;
+    border-radius: 20px; /* coins arrondis */
+    height: fit-content; /* hauteur s'ajuste au contenu */
+    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
+    top: 40px; /* position mini haut de l'écran */
+    margin-bottom: 20px;
+}
+.tableauliens th {
+    border: none;
+    padding: 5px 2px;
+    vertical-align: center;
+    text-decoration: underline;
+    font-size: clamp(1.2rem, 1.5vw, 2.5rem);
+}
+.tableauliens td {
+    border: none;
+    padding: 5px 5px;
+    vertical-align: center;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+}
+.tableauliens .titre1, .cell1 {
+    text-align: left;
+}
+.tableauliens .titre2, .cell2 {
+    text-align: center;
+}
+.tableauliens a {
+    color: rgb(211, 104, 4);
+    font-weight: bold;
+}
+/* conteneur tableau liste recettes */
+
+main {
+    flex: 1; /* prend tout l'espace restant après la sidebar */
 }
 
-.listeliens li {
-    list-style-type: "  \27A4    "; 
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: rgb(255, 255, 255);
-}
-.listeliens a {
-    text-decoration: none;
-    font-size: 1.3rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-}
+/* Etapes recettes */
 .etapes h2 {
     font-size: 1.4rem;
     color: rgb(255, 255, 255);
@@ -74,12 +102,7 @@ h1 { color: #f9fbfc; }
     color: rgb(255, 255, 255);
     font-style: normal;
 }  
-/* conteneur liste liens */
-
-main {
-    flex: 1; /* prend tout l'espace restant après la sidebar */
-}
-
+/* Etapes recettes */
 
 /* Liste toutes recettes */
 .listeR {

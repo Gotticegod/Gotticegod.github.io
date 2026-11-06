@@ -10,15 +10,40 @@
 <body>
  <div class="conteneurListe">
         <main>
-            <div class="listeliens">
-                <h1>Recettes salées :</h1>
-                <li><a href="sal/flancourgette.html">Flan de courgettes - Préparation : 15 min - Cuisson : 30 min</a></li>
-                <li><a href="sal/patepizzamoelleuse.html">Pâte à pizza moelleuse - Préparation : 10 min - Cuisson : 0 min - Repos 1h30</a></li>
-                <li><a href="rec3.html">Recette 3</a></li>
-            </div>
-            <a href="recettes.html">&#10148 Retour</a>
+            <h1>Recettes salées :</h1>
+            <table class="tableauliens">
+                <colgroup>
+                    <col style="width: 40%">   <!-- colonne 1 -->
+                    <col style="width: 15%">   <!-- colonne 2 -->
+                    <col style="width: 15%">   <!-- colonne 3 -->
+                    <col style="width: 15%">   <!-- colonne 4 -->
+                    <col style="width: 15%">   <!-- colonne 5 -->
+                </colgroup>
+                <tr>
+                    <th class="titre1">Nom recette</th>
+                    <th class="titre2">Prépa.</th>
+                    <th class="titre2">Repos</th>
+                    <th class="titre2">Cuisson</th>
+                    <th class="titre2">Total</th>
+                </tr>
+                <tr>
+                    <td class="cell1"><a href="sal/flancourgette.html">Flan de courgettes</a></td>
+                    <td class="cell2">15 min</td>
+                    <td class="cell2">0</td>
+                    <td class="cell2">30 min</td>
+                    <td class="cell2">45 min</td>
+                </tr>
+                <tr>
+                    <td class="cell1"><a href="sal/patepizzamoelleuse.html">Pâte à pizza moelleuse</a></td>
+                    <td class="cell2">10 min</td>
+                    <td class="cell2">15 min</td>
+                    <td class="cell2">1h30</td>
+                    <td class="cell2">1h55</td>
+                </tr>
+                
+            </table>
+            <a href="recettes.html">&#11164 Retour</a>
         </main>
-
         
         <!-- ******************* Sommaire ******************* -->
         <nav class="sidebar">
