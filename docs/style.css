@@ -51,7 +51,7 @@ h1 { color: #f9fbfc; }
 }
 
 .listeliens li {
-    list-style-type: "⮚    "; 
+    list-style-type: "U+2B9A    "; 
     font-size: 1.2rem;
     margin-bottom: 5px;
     color: rgb(255, 255, 255);
