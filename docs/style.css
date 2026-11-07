@@ -4,8 +4,8 @@
 
 body {
     font-family: sans-serif; /*  */
-    max-width: 1400px;
-    margin: 40px auto;
+    max-width: 2500px;
+    margin: 20px auto;
     padding: 0 20px;
     line-height: 1.6;
     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("images/fond.jpg");
@@ -18,6 +18,7 @@ body {
 body h1 {
     text-align: center;
     border: 2px solid white;
+    font-size: clamp(2rem, 3vw, 4.5rem);
 }
 
 body a {
@@ -30,7 +31,7 @@ h1 { color: #f9fbfc; }
 /* conteneur main & Sommaire */
 .conteneur {
     display: flex; /* mode flexbox > enfants directs côte à côte */
-    max-width: 1400px; /* largeur maxi conteneur */
+    max-width: 2500px; /* largeur maxi conteneur */
     margin: 0 auto; /* 0 marge haut/bas + auto centrage horizontal */
     padding: 20px; /* écart entre bord conteneur et intérieur conteneur */
     gap: 30px; /* écart entre les enfants du conteneur */
@@ -40,7 +41,7 @@ h1 { color: #f9fbfc; }
 /* conteneur liste liens */
 .conteneurListe {
     display: flex; /* mode flexbox > enfants directs côte à côte */
-    max-width: 1400px; /* largeur maxi conteneur */
+    max-width: 2500px; /* largeur maxi conteneur */
     margin: 0 auto; /* 0 marge haut/bas + auto centrage horizontal */
     padding: 20px; /* écart entre bord conteneur et intérieur conteneur */
     gap: 30px; /* écart entre les enfants du conteneur */
@@ -53,26 +54,27 @@ h1 { color: #f9fbfc; }
     table-layout: fixed;    /* respecte les largeurs définies */
     width: 100%;
     background: rgba(204, 17, 17, 0.733); /* fond blanc avec 90% d'opacité */
-    padding: 20px; /* écart entre bord et intérieur */
+    padding: 10px; /* écart entre bord et intérieur */
     border: 2px solid white;
     border-radius: 20px; /* coins arrondis */
     height: fit-content; /* hauteur s'ajuste au contenu */
     position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
-    top: 40px; /* position mini haut de l'écran */
+    top: 20px; /* position mini haut de l'écran */
     margin-bottom: 20px;
 }
 .tableauliens th {
     border: none;
-    padding: 5px 2px;
     vertical-align: center;
     text-decoration: underline;
-    font-size: clamp(1.2rem, 1.5vw, 2.5rem);
+    font-size: clamp(1rem, 2vw, 2.5rem);
+    padding: clamp(5px, 1vw, 15px);
 }
 .tableauliens td {
     border: none;
-    padding: 5px 5px;
     vertical-align: center;
-    font-size: clamp(1rem, 1.2vw, 2rem);
+    font-size: clamp(0.8rem, 1.8vw, 2rem);
+    padding: clamp(5px, 1vw, 15px);
+    margin: clamp(2px, 1vw, 5px);
 }
 .tableauliens .titre1, .cell1 {
     text-align: left;
@@ -83,6 +85,7 @@ h1 { color: #f9fbfc; }
 .tableauliens a {
     color: rgb(211, 104, 4);
     font-weight: bold;
+    text-decoration: none;
 }
 /* conteneur tableau liste recettes */
 
@@ -92,15 +95,18 @@ main {
 
 /* Etapes recettes */
 .etapes h2 {
-    font-size: 1.4rem;
+    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
     color: rgb(255, 255, 255);
     font-style: bold;
     text-decoration: underline;
+    margin-bottom: 5px;
 }  
 .etapes p {
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.1vw, 2rem);
     color: rgb(255, 255, 255);
     font-style: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }  
 /* Etapes recettes */
 
@@ -214,6 +220,18 @@ main {
     color: #e74c3c;
 }
 /* Sommaire */
+
+/* Liens de navigation */
+.bpnavig {
+    font-size: clamp(1.2rem, 2vw, 2.5rem);
+    text-decoration: none;
+    border: 4px solid #ffffff;
+    border-radius: 5px; /* coins arrondis */
+    color: #e74c3c;
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+}
+/* Liens de navigation */
 
 /* Ingrédients */
 .ingredients {
