@@ -5,7 +5,7 @@
 body {
     font-family: sans-serif; /*  */
     max-width: 2500px;
-    margin: 20px auto;
+    margin: 5px auto;
     padding: 0 20px;
     line-height: 1.6;
     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("images/fond.jpg");
@@ -61,6 +61,7 @@ h1 { color: #f9fbfc; }
     position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
     top: 20px; /* position mini haut de l'écran */
     margin-bottom: 20px;
+    padding-top: clamp(50px, 5vw, 80px);
 }
 .tableauliens th {
     border: none;
@@ -77,10 +78,14 @@ h1 { color: #f9fbfc; }
     margin: clamp(2px, 1vw, 5px);
 }
 .tableauliens .titre1, .cell1 {
-    text-align: left;
+    text-align: center;
 }
 .tableauliens .titre2, .cell2 {
     text-align: center;
+}
+.tableauliens .titre2 {
+    transform: rotate(-45deg) translate(40%, 0);
+    transform-origin: bottom center;
 }
 .tableauliens a {
     color: rgb(211, 104, 4);
@@ -93,23 +98,6 @@ main {
     flex: 1; /* prend tout l'espace restant après la sidebar */
 }
 
-/* Etapes recettes */
-.etapes h2 {
-    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
-    color: rgb(255, 255, 255);
-    font-style: bold;
-    text-decoration: underline;
-    margin-bottom: 5px;
-}  
-.etapes p {
-    font-size: clamp(1rem, 1.1vw, 2rem);
-    color: rgb(255, 255, 255);
-    font-style: normal;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}  
-/* Etapes recettes */
-
 /* Liste toutes recettes */
 .listeR {
     background: rgba(204, 17, 17, 0.733); /* fond blanc avec 90% d'opacité */
@@ -118,11 +106,12 @@ main {
     border-radius: 20px; /* coins arrondis */
     height: fit-content; /* hauteur s'ajuste au contenu */
     position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
-    top: 40px; /* position mini haut de l'écran */
+    top: 20px; /* position mini haut de l'écran */
 }
 .listeR h2 {
     text-align: center;
     margin-top: 0;
+    margin-bottom: 10px;
     font-size: 2.5rem;
     color:rgb(255, 255, 255);
     text-decoration: underline;
@@ -221,6 +210,26 @@ main {
 }
 /* Sommaire */
 
+/* Etapes recettes */
+.etapes h2 {
+    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
+    color: rgb(255, 255, 255);
+    font-style: bold;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}  
+.etapes p {
+    font-size: clamp(1rem, 1.1vw, 2rem);
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}  
+.etapes {
+    margin-bottom: clamp(25px, 2vw, 50px);
+}
+/* Etapes recettes */
+
 /* Liens de navigation */
 .bpnavig {
     font-size: clamp(1.2rem, 2vw, 2.5rem);
@@ -257,14 +266,9 @@ main {
     padding: 6px 0;
     list-style: none; /* enlève la petite flèche par défaut */
     color: #e74c3c;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 2vw, 2rem);
 }
-/* La flèche personnalisée */
-.ingredients summary::before {
-    display: inline-block;
-    margin-right: 8px;
-    font-size: 1.5rem;
-}
+
 /* Toutes les images dont le src contient "ingr/" */
 img[src*="ingr/"] {
     width: 65px;
