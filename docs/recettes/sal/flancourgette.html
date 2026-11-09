@@ -7,6 +7,8 @@
     <title>Flan de courgettes</title>
 </head>
 
+<script src="../quantite.js"></script>
+
 <body>
  <div class="conteneurListe">
         <main>
@@ -28,8 +30,12 @@
 
         
         <!-- ******************* Ingrédients ******************* -->
+
+        <div id="ingr1" data-qtite="125"></div>
+
         <nav class="ingredients">
-            <h2>Ingrédients<br>6 personnes</h2>
+            <h2>Ingrédients<br><span id="nbpers">6</span> personnes</h2>
+            <button onclick="qtiteingr()">Total</button>
                 <summary><img src="../ingr/courgette.png" alt="Courgette">750g - Courgettes</summary>
                 <summary><img src="../ingr/Oeuf.png" alt="Oeuf">6 - Oeufs</summary>
                 <summary><img src="../ingr/feculemais.png" alt="feculemais">3 C à S - Maïzena</summary>
@@ -38,6 +44,8 @@
                 <summary><img src="../ingr/gruyere.png" alt="gruyere">150g - Gruyère râpé</summary>
                 <summary><img src="../ingr/jambon.png" alt="jambon">3 tranches - Jambon</summary>
                 <summary><img src="../ingr/sel.png" alt="sel">Sel & poivre</summary>
+                <summary><img src="../ingr/courgette.png" alt="Courgette"><strong id="qtiteingr1"></strong> courgettes</summary>
+                
         </nav>
         <!-- ******************* Ingrédients ******************* -->
     </div>
