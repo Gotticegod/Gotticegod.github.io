@@ -7,6 +7,8 @@
     <title>Pâte à pizza moelleuse</title>
 </head>
 
+<script src="../NbPates.js"></script>
+
 <body>
  <div class="conteneurListe">
         <main>
@@ -28,14 +30,39 @@
 
         
         <!-- ******************* Ingrédients ******************* -->
-        <nav class="ingredients">
-            <h2>Ingrédients<br>1 pâte à pizza</h2>
-                <summary><img src="../ingr/eau.png" alt="eau">125g - Eau tiède</summary>
-                <summary><img src="../ingr/huileol.png" alt="huileol">25g - Huile olive</summary>
-                <summary><img src="../ingr/farine.png" alt="farine">250g - Farine</summary>
-                <summary><img src="../ingr/levurechimique.png" alt="levurechimique">1/2 sachet - Levure chimique</summary>
-                <summary><img src="../ingr/sucre.png" alt="sucre">1 morceau - Sucre</summary>
-                <summary><img src="../ingr/sel.png" alt="sel">1 pincée -Sel</summary>
+         <nav class="ingredients">
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+            <div id="ingr1" data-poids="125"></div>
+            <div id="ingr2" data-poids="25"></div>
+            <div id="ingr3" data-poids="250"></div>
+            <div id="ingr4" data-poids="0.5"></div>
+            <div id="ingr5" data-poids="1"></div>
+            <div id="ingr6" data-poids="1"></div>
+            <div id="ingr7" data-poids="0"></div>
+            <div id="ingr8" data-poids="0"></div>
+            <div id="ingr9" data-poids="0"></div>
+            <div id="ingr10" data-poids="0"></div>
+            <div id="ingr11" data-poids="0"></div>
+            <div id="ingr12" data-poids="0"></div>
+            <div id="ingr13" data-poids="0"></div>
+            <div id="ingr14" data-poids="0"></div>
+            <div id="ingr15" data-poids="0"></div>
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+             
+            <h2>Ingrédients
+            <div class="cptnbpers">
+                <button onclick="CalcPates(-1)">-</button>
+                <span id="nbPates">1</span>
+                <button onclick="CalcPates(1)">+</button>
+            </div>
+            Pâte à pizza</h2>
+
+                <summary><img src="../ingr/eau.png" alt="eau"><span id="totingr1">125</span>g - Eau tiède</summary>
+                <summary><img src="../ingr/huileol.png" alt="huileol"><span id="totingr2">25</span>g - Huile olive</summary>
+                <summary><img src="../ingr/farine.png" alt="farine"><span id="totingr3">250</span>g - Farine</summary>
+                <summary><img src="../ingr/levurechimique.png" alt="levurechimique"><span id="totingr4">0.5</span> sachet - Levure chimique</summary>
+                <summary><img src="../ingr/sucre.png" alt="sucre"><span id="totingr5">1</span> morceau - Sucre</summary>
+                <summary><img src="../ingr/sel.png" alt="sel"><span id="totingr6">1</span> pincée -Sel</summary>
         </nav>
         <!-- ******************* Ingrédients ******************* -->
     </div>

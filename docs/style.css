@@ -243,6 +243,7 @@ main {
 /* Liens de navigation */
 
 /* Ingrédients */
+
 .ingredients {
     width: 500px; /* taille fixe */
     flex-shrink: 0; /* conserve la taille fixe */
@@ -256,10 +257,42 @@ main {
 }
 .ingredients h2 {
     text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+.cptnbpers {
+    text-align: center;
     margin-top: 0;
     font-size: 2rem;
     color: #2c3e50;
     font-weight: bold;
+    align-items: center;         /* centrés verticalement */
+    
+}
+.cptnbpers button {
+    width: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    align-items: center;
+    height: 45px;
+    font-size: 2rem;
+    border: 2px solid #333;
+    background: white;
+    cursor: pointer;             /* main au survol */
+    border-radius: 50%;          /* boutons ronds */
+}
+.cptnbpers button:hover {
+    background: #eee;            /* fond gris au survol */
+}
+.cptnbpers span {
+    font-size: 2rem;
+    font-weight: bold;
+    min-width: 30px;            /* évite que ça bouge quand le nombre change de largeur */
+    text-align: center;
 }
 .ingredients summary {
     text-align: left;

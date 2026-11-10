@@ -7,7 +7,7 @@
     <title>Flan de courgettes</title>
 </head>
 
-<script src="../quantite.js"></script>
+<script src="../NbPersonnes.js"></script>
 
 <body>
  <div class="conteneurListe">
@@ -31,20 +31,41 @@
         
         <!-- ******************* Ingrédients ******************* -->
 
-        <div id="ingr1" data-qtite="125"></div>
-
         <nav class="ingredients">
-            <h2>Ingrédients<br><span id="nbpers">6</span> personnes</h2>
-            <button onclick="qtiteingr()">Total</button>
-                <summary><img src="../ingr/courgette.png" alt="Courgette">750g - Courgettes</summary>
-                <summary><img src="../ingr/Oeuf.png" alt="Oeuf">6 - Oeufs</summary>
-                <summary><img src="../ingr/feculemais.png" alt="feculemais">3 C à S - Maïzena</summary>
-                <summary><img src="../ingr/Lait.png" alt="Lait">1,5 verre - Lait</summary>
-                <summary><img src="../ingr/cremefraiche.png" alt="cremefraiche">18 cl - Crème fraîche</summary>
-                <summary><img src="../ingr/gruyere.png" alt="gruyere">150g - Gruyère râpé</summary>
-                <summary><img src="../ingr/jambon.png" alt="jambon">3 tranches - Jambon</summary>
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+            <div id="ingr1" data-poids="125"></div>
+            <div id="ingr2" data-poids="1"></div>
+            <div id="ingr3" data-poids="0.5"></div>
+            <div id="ingr4" data-poids="0.25"></div>
+            <div id="ingr5" data-poids="3"></div>
+            <div id="ingr6" data-poids="25"></div>
+            <div id="ingr7" data-poids="0.5"></div>
+            <div id="ingr8" data-poids="0"></div>
+            <div id="ingr9" data-poids="0"></div>
+            <div id="ingr10" data-poids="0"></div>
+            <div id="ingr11" data-poids="0"></div>
+            <div id="ingr12" data-poids="0"></div>
+            <div id="ingr13" data-poids="0"></div>
+            <div id="ingr14" data-poids="0"></div>
+            <div id="ingr15" data-poids="0"></div>
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+
+            <h2>Ingrédients</h2>
+            <div class="cptnbpers">
+                <button onclick="CalcPers(-1)">-</button>
+                <span id="nbPersonnes">6</span>
+                <button onclick="CalcPers(1)">+</button>
+            </div>
+            <h2>Personnes</h2>
+
+                <summary><img src="../ingr/courgette.png" alt="Courgette"><span id="totingr1">750</span>g - Courgettes</summary>
+                <summary><img src="../ingr/Oeuf.png" alt="Oeuf"><span id="totingr2">6</span> - Oeufs</summary>
+                <summary><img src="../ingr/feculemais.png" alt="feculemais"><span id="totingr3">3</span> C à S - Maïzena</summary>
+                <summary><img src="../ingr/Lait.png" alt="Lait"><span id="totingr4">1.5</span> verre - Lait</summary>
+                <summary><img src="../ingr/cremefraiche.png" alt="cremefraiche"><span id="totingr5">18</span> cl - Crème fraîche</summary>
+                <summary><img src="../ingr/gruyere.png" alt="gruyere"><span id="totingr6">150</span>g - Gruyère râpé</summary>
+                <summary><img src="../ingr/jambon.png" alt="jambon"><span id="totingr7">3</span> tranches - Jambon</summary>
                 <summary><img src="../ingr/sel.png" alt="sel">Sel & poivre</summary>
-                <summary><img src="../ingr/courgette.png" alt="Courgette"><strong id="qtiteingr1"></strong> courgettes</summary>
                 
         </nav>
         <!-- ******************* Ingrédients ******************* -->
