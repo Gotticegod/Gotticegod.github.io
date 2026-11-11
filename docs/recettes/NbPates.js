@@ -41,19 +41,19 @@ function CalcIngr(Nbpates) {
     // Affiche la nouvelle valeur dans le html
     document.getElementById("nbPates").textContent = Nbpates;
     // Recalcule les ingrédients automatiquement
-    if (ingr1 > 0) {document.getElementById("totingr1").textContent = (Nbpates * ingr1);}
-    if (ingr2 > 0) {document.getElementById("totingr2").textContent = (Nbpates * ingr2);}
-    if (ingr3 > 0) {document.getElementById("totingr3").textContent = (Nbpates * ingr3);}
-    if (ingr4 > 0) {document.getElementById("totingr4").textContent = (Nbpates * ingr4);}
-    if (ingr5 > 0) {document.getElementById("totingr5").textContent = (Nbpates * ingr5);}
-    if (ingr6 > 0) {document.getElementById("totingr6").textContent = (Nbpates * ingr6);}
-    if (ingr7 > 0) {document.getElementById("totingr7").textContent = (Nbpates * ingr7);}  
-    if (ingr8 > 0) {document.getElementById("totingr8").textContent = (Nbpates * ingr8);}
-    if (ingr9 > 0) {document.getElementById("totingr9").textContent = (Nbpates * ingr9);}
-    if (ingr10 > 0) {document.getElementById("totingr10").textContent = (Nbpates * ingr10);}
-    if (ingr11 > 0) {document.getElementById("totingr11").textContent = (Nbpates * ingr11);}
-    if (ingr12 > 0) {document.getElementById("totingr12").textContent = (Nbpates * ingr12);}
-    if (ingr13 > 0) {document.getElementById("totingr13").textContent = (Nbpates * ingr13);}
-    if (ingr14 > 0) {document.getElementById("totingr14").textContent = (Nbpates * ingr14);}
-    if (ingr15 > 0) {document.getElementById("totingr15").textContent = (Nbpates * ingr15);}
+    if (ingr1 > 0) {document.getElementById("totingr1").textContent = (Nbpates * ingr1).toFixed(1);}
+    if (ingr2 > 0) {document.getElementById("totingr2").textContent = (Nbpates * ingr2).toFixed(1);}
+    if (ingr3 > 0) {document.getElementById("totingr3").textContent = (Nbpates * ingr3).toFixed(1);}
+    if (ingr4 > 0) {document.getElementById("totingr4").textContent = (Nbpates * ingr4).toFixed(1);}
+    if (ingr5 > 0) {document.getElementById("totingr5").textContent = (Nbpates * ingr5).toFixed(1);}
+    if (ingr6 > 0) {document.getElementById("totingr6").textContent = (Nbpates * ingr6).toFixed(1);}
+    if (ingr7 > 0) {document.getElementById("totingr7").textContent = (Nbpates * ingr7).toFixed(1);}  
+    if (ingr8 > 0) {document.getElementById("totingr8").textContent = (Nbpates * ingr8).toFixed(1);}
+    if (ingr9 > 0) {document.getElementById("totingr9").textContent = (Nbpates * ingr9).toFixed(1);}
+    if (ingr10 > 0) {document.getElementById("totingr10").textContent = (Nbpates * ingr10).toFixed(1);}
+    if (ingr11 > 0) {document.getElementById("totingr11").textContent = (Nbpates * ingr11).toFixed(1);}
+    if (ingr12 > 0) {document.getElementById("totingr12").textContent = (Nbpates * ingr12).toFixed(1);}
+    if (ingr13 > 0) {document.getElementById("totingr13").textContent = (Nbpates * ingr13).toFixed(1);}
+    if (ingr14 > 0) {document.getElementById("totingr14").textContent = (Nbpates * ingr14).toFixed(1);}
+    if (ingr15 > 0) {document.getElementById("totingr15").textContent = (Nbpates * ingr15).toFixed(1);}
 }

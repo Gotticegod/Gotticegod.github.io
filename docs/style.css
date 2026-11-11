@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box; /* règle pour inclure le padding dans les width */
 }
-
 body {
     font-family: sans-serif; /*  */
     max-width: 2500px;
@@ -14,19 +13,19 @@ body {
     background-attachment: fixed;
     color: white;
 }
-
 body h1 {
     text-align: center;
     border: 2px solid white;
     font-size: clamp(2rem, 3vw, 4.5rem);
 }
-
 body a {
     text-align: center;
     color: #e79991;
 }
-
 h1 { color: #f9fbfc; }
+main {
+    flex: 1; /* prend tout l'espace restant après la sidebar */
+}
 
 /* conteneur main & Sommaire */
 .conteneur {
@@ -38,7 +37,7 @@ h1 { color: #f9fbfc; }
 }
 /* conteneur main & Sommaire */
 
-/* conteneur liste liens */
+/* recettes - liste recettes */
 .conteneurListe {
     display: flex; /* mode flexbox > enfants directs côte à côte */
     max-width: 2500px; /* largeur maxi conteneur */
@@ -46,10 +45,9 @@ h1 { color: #f9fbfc; }
     padding: 20px; /* écart entre bord conteneur et intérieur conteneur */
     gap: 30px; /* écart entre les enfants du conteneur */
 }
-/* conteneur liste liens */
+/* recettes - liste recettes */
 
-
-/* conteneur tableau liste recettes */
+/* recettes - tableau liste recettes */
 .tableauliens {
     table-layout: fixed;    /* respecte les largeurs définies */
     width: 100%;
@@ -92,13 +90,198 @@ h1 { color: #f9fbfc; }
     font-weight: bold;
     text-decoration: none;
 }
-/* conteneur tableau liste recettes */
+/* recettes - tableau liste recettes */
 
-main {
-    flex: 1; /* prend tout l'espace restant après la sidebar */
+/* Sommaire */
+.sidebar {
+    width: 300px; /* taille fixe */
+    flex-shrink: 0; /* conserve la taille fixe */
+    background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
+    padding: 20px; /* écart entre bord et intérieur */
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px; /* coins arrondis */
+    height: fit-content; /* hauteur s'ajuste au contenu */
+    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
+    top: 40px; /* position mini haut de l'écran */
+}
+.sidebar h2 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 4rem;
+    color: #2c3e50;
+}
+.sidebar details { /* Le bloc déroulant */
+    margin-bottom: 8px;
+}
+.sidebar summary { /* Le titre cliquable */
+    cursor: pointer; /* main qui pointe au survol */
+    font-weight: bold;
+    padding: 6px 0;
+    list-style: none; /* enlève la petite flèche par défaut */
+    color: #e74c3c;
+    font-size: 2rem;
+}
+.sidebar summary::before { /* La flèche personnalisée */
+    content: "▶";              /* triangle fermé */
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 1.5rem;
+    transition: transform 0.2s; /* rotation animée */
+}
+.sidebar details[open] summary::before { /* Quand ouvert : la flèche pivote */
+    transform: rotate(90deg);  /* ▶ devient ▼ */
+}
+.sidebar details ul { /* Les sous-liens */
+    list-style: none;
+    padding-left: 20px;        /* indenté sous le titre */
+    margin: 5px 0;
+}
+.sidebar details li {
+    margin-bottom: 5px;
+}
+.sidebar details a {
+    text-decoration: none;
+    color: rgb(223, 105, 92);
+    font-size: 1.7rem;
+}
+.sidebar details a:hover {
+    color: #e74c3c;
+}
+/* Sommaire */
+
+/* recettes - Etapes */
+.etapes h2 {
+    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
+    color: rgb(255, 255, 255);
+    font-style: bold;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}  
+.etapes p {
+    font-size: clamp(1rem, 1.1vw, 2rem);
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}  
+.etapes {
+    margin-bottom: clamp(25px, 2vw, 50px);
+}
+/* recettes - Etapes */
+
+/* Liens de navigation */
+.bpnavig {
+    font-size: clamp(1.2rem, 2vw, 2.5rem);
+    text-decoration: none;
+    border: 4px solid #ffffff;
+    border-radius: 5px; /* coins arrondis */
+    color: #e74c3c;
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+}
+/* Liens de navigation */
+
+/* Ingrédients */
+.ingredients {
+    width: 500px; /* taille fixe */
+    flex-shrink: 0; /* conserve la taille fixe */
+    background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
+    padding: 20px; /* écart entre bord et intérieur */
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px; /* coins arrondis */
+    height: fit-content; /* hauteur s'ajuste au contenu */
+    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
+    top: 40px; /* position mini haut de l'écran */
+}
+.ingredients h2 {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+.cptnbpers {
+    text-align: center;
+    margin-top: 0;
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: bold;
+    align-items: center;         /* centrés verticalement */
+}
+.cptnbpers button {
+    width: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    align-items: center;
+    height: 45px;
+    font-size: 2rem;
+    border: 2px solid #333;
+    background: white;
+    cursor: pointer;             /* main au survol */
+    border-radius: 50%;          /* boutons ronds */
+}
+.cptnbpers button:hover {
+    background: #eee;            /* fond gris au survol */
+}
+.cptnbpers span {
+    font-size: 2rem;
+    font-weight: bold;
+    min-width: 30px;            /* évite que ça bouge quand le nombre change de largeur */
+    text-align: center;
+}
+.ingredients summary {
+    text-align: left;
+    padding: 6px 0;
+    list-style: none; /* enlève la petite flèche par défaut */
+    color: #e74c3c;
+    font-size: clamp(1.4rem, 2vw, 2rem);
 }
 
-/* Liste toutes recettes */
+/* Toutes les images dont le src contient "ingr/" */
+img[src*="ingr/"] {
+    width: 65px;
+    vertical-align: middle;
+    margin-right: 16px;
+}
+/* Toutes les images dont le src contient "ingr/" */
+
+/* Affichage sur mobile */
+@media (max-width: 768px) { /* si l'écran fait moins de 768px */
+    .conteneur {
+        flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
+        padding: 10px;
+    }
+    .conteneurListe {
+        flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
+        padding: 10px;
+    }
+    .sidebar {
+        width: 100%; /* prend toute la largeur */
+        flex-shrink: 1; /* autorise de rétrécir */
+        position: static; /* désactive l'option sticky */
+    }
+    .ingredients {
+        width: 100%; /* prend toute la largeur */
+        flex-shrink: 1; /* autorise de rétrécir */
+        position: static; /* désactive l'option sticky */
+    }
+}
+/* Affichage sur mobile */
+
+
+
+
+
+
+
+
+
+
+
+
+/* OLD Liste toutes recettes */
 .listeR {
     background: rgba(204, 17, 17, 0.733); /* fond blanc avec 90% d'opacité */
     padding: 20px; /* écart entre bord et intérieur */
@@ -146,187 +329,4 @@ main {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
-/* Liste toutes recettes */
-
-
-/* Sommaire */
-.sidebar {
-    width: 300px; /* taille fixe */
-    flex-shrink: 0; /* conserve la taille fixe */
-    background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
-    padding: 20px; /* écart entre bord et intérieur */
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 20px; /* coins arrondis */
-    height: fit-content; /* hauteur s'ajuste au contenu */
-    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
-    top: 40px; /* position mini haut de l'écran */
-}
-.sidebar h2 {
-    text-align: center;
-    margin-top: 0;
-    font-size: 4rem;
-    color: #2c3e50;
-}
-.sidebar details { /* Le bloc déroulant */
-    margin-bottom: 8px;
-}
-/* Le titre cliquable */
-.sidebar summary {
-    cursor: pointer; /* main qui pointe au survol */
-    font-weight: bold;
-    padding: 6px 0;
-    list-style: none; /* enlève la petite flèche par défaut */
-    color: #e74c3c;
-    font-size: 2rem;
-}
-/* La flèche personnalisée */
-.sidebar summary::before {
-    content: "▶";              /* triangle fermé */
-    display: inline-block;
-    margin-right: 8px;
-    font-size: 1.5rem;
-    transition: transform 0.2s; /* rotation animée */
-}
-/* Quand ouvert : la flèche pivote */
-.sidebar details[open] summary::before {
-    transform: rotate(90deg);  /* ▶ devient ▼ */
-}
-/* Les sous-liens */
-.sidebar details ul {
-    list-style: none;
-    padding-left: 20px;        /* indenté sous le titre */
-    margin: 5px 0;
-}
-.sidebar details li {
-    margin-bottom: 5px;
-}
-.sidebar details a {
-    text-decoration: none;
-    color: rgb(223, 105, 92);
-    font-size: 1.7rem;
-}
-.sidebar details a:hover {
-    color: #e74c3c;
-}
-/* Sommaire */
-
-/* Etapes recettes */
-.etapes h2 {
-    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
-    color: rgb(255, 255, 255);
-    font-style: bold;
-    text-decoration: underline;
-    margin-bottom: 5px;
-}  
-.etapes p {
-    font-size: clamp(1rem, 1.1vw, 2rem);
-    color: rgb(255, 255, 255);
-    font-style: normal;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}  
-.etapes {
-    margin-bottom: clamp(25px, 2vw, 50px);
-}
-/* Etapes recettes */
-
-/* Liens de navigation */
-.bpnavig {
-    font-size: clamp(1.2rem, 2vw, 2.5rem);
-    text-decoration: none;
-    border: 4px solid #ffffff;
-    border-radius: 5px; /* coins arrondis */
-    color: #e74c3c;
-    padding: 8px;
-    background-color: rgb(255, 255, 255);
-}
-/* Liens de navigation */
-
-/* Ingrédients */
-
-.ingredients {
-    width: 500px; /* taille fixe */
-    flex-shrink: 0; /* conserve la taille fixe */
-    background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
-    padding: 20px; /* écart entre bord et intérieur */
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 20px; /* coins arrondis */
-    height: fit-content; /* hauteur s'ajuste au contenu */
-    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
-    top: 40px; /* position mini haut de l'écran */
-}
-.ingredients h2 {
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    font-size: 2rem;
-    color: #2c3e50;
-    font-weight: bold;
-}
-.cptnbpers {
-    text-align: center;
-    margin-top: 0;
-    font-size: 2rem;
-    color: #2c3e50;
-    font-weight: bold;
-    align-items: center;         /* centrés verticalement */
-    
-}
-.cptnbpers button {
-    width: 45px;
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: center;
-    align-items: center;
-    height: 45px;
-    font-size: 2rem;
-    border: 2px solid #333;
-    background: white;
-    cursor: pointer;             /* main au survol */
-    border-radius: 50%;          /* boutons ronds */
-}
-.cptnbpers button:hover {
-    background: #eee;            /* fond gris au survol */
-}
-.cptnbpers span {
-    font-size: 2rem;
-    font-weight: bold;
-    min-width: 30px;            /* évite que ça bouge quand le nombre change de largeur */
-    text-align: center;
-}
-.ingredients summary {
-    text-align: left;
-    padding: 6px 0;
-    list-style: none; /* enlève la petite flèche par défaut */
-    color: #e74c3c;
-    font-size: clamp(1.4rem, 2vw, 2rem);
-}
-
-/* Toutes les images dont le src contient "ingr/" */
-img[src*="ingr/"] {
-    width: 65px;
-    vertical-align: middle;
-    margin-right: 16px;
-}
-/* Ingrédients */
-
-@media (max-width: 768px) { /* si l'écran fait moins de 768px */
-    .conteneur {
-        flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
-        padding: 10px;
-    }
-    .conteneurListe {
-        flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
-        padding: 10px;
-    }
-    .sidebar {
-        width: 100%; /* prend toute la largeur */
-        flex-shrink: 1; /* autorise de rétrécir */
-        position: static; /* désactive l'option sticky */
-    }
-    .ingredients {
-        width: 100%; /* prend toute la largeur */
-        flex-shrink: 1; /* autorise de rétrécir */
-        position: static; /* désactive l'option sticky */
-    }
-}
+/* OLD Liste toutes recettes */
