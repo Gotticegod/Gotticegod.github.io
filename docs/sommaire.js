@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // fetch() = demande au navigateur d'aller chercher un fichier
     // "nav.html" = le fichier à charger (chemin relatif depuis la page actuelle)
-    fetch("sommaire.html")
+    fetch("/sommaire.html")
 
         // .then() = "quand la réponse arrive" (le navigateur attend, c'est asynchrone)
         // response = la réponse du serveur (le fichier qu'on a demandé)
