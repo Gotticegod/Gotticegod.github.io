@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pâte brisée</title>
+</head>
+
+<script src="/recettes/NbPates.js"></script>
+
+<body>
+ <div class="conteneurListe">
+        <main>
+            <div class="etapes">
+                <h1>Pâte brisée :</h1>
+                    <h2>&#10148 Etape 1 :</h2>
+                        <p>- Mélanger la farine, le sel et le sucre dans un saladier</p>
+                    <h2>&#10148 Etape 2 :</h2>
+                        <p>- Ajouter le beurre et sabler fin (frotter entre les doigts)</p>
+                    <h2>&#10148 Etape 3 :</h2>
+                        <p>- Ajouter l'eau</p>
+                        <p>- Travailler la pâte jusqu'à obtenir une boule</p>
+            </div>
+            <a href="/recettes/sucre.html" class="bpnavig">&#8617 Retour</a>
+        </main>
+
+        
+        <!-- ******************* Ingrédients ******************* -->
+         <nav class="ingredients">
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+            <div id="ingr1" data-poids="80"></div>
+            <div id="ingr2" data-poids="150"></div>
+            <div id="ingr3" data-poids="3"></div>
+            <div id="ingr4" data-poids="300"></div>
+            <div id="ingr5" data-poids="0.5"></div>
+            <div id="ingr6" data-poids="0"></div>
+            <div id="ingr7" data-poids="0"></div>
+            <div id="ingr8" data-poids="0"></div>
+            <div id="ingr9" data-poids="0"></div>
+            <div id="ingr10" data-poids="0"></div>
+            <div id="ingr11" data-poids="0"></div>
+            <div id="ingr12" data-poids="0"></div>
+            <div id="ingr13" data-poids="0"></div>
+            <div id="ingr14" data-poids="0"></div>
+            <div id="ingr15" data-poids="0"></div>
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+             
+            <h2>Ingrédients</h2>
+            <div class="cptnbpers">
+                <button onclick="CalcPates(-1)">-</button>
+                <span id="nbPates">1</span>
+                <button onclick="CalcPates(1)">+</button>
+            </div>
+            <h2>Pâte brisée</h2>
+                <summary><img src="/recettes/ingr/eau.png" alt="eau" loading="lazy"><span id="totingr1">80</span>g - Eau tiède</summary>
+                <summary><img src="/recettes/ingr/beurresale.png" alt="beurresale" loading="lazy"><span id="totingr2">150</span>g - Beurre salé en dés pommade</summary>
+                <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr3">3</span>C à S - Sucre</summary>
+                <summary><img src="/recettes/ingr/farine.png" alt="farine" loading="lazy"><span id="totingr4">300</span>g - Farine</summary>
+                <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr5">0.5</span> C à C - Sel</summary>
+        </nav>
+        <!-- ******************* Ingrédients ******************* -->
+    </div>
+</body>    
+</html>
