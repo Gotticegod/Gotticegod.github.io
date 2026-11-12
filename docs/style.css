@@ -30,7 +30,7 @@ main {
     flex: 1; /* prend tout l'espace restant après la sidebar */
 }
 
-/* conteneur main & Sommaire */
+/* conteneur main & Sommaire & recettes */
 .conteneur {
     display: flex; /* mode flexbox > enfants directs côte à côte */
     max-width: 2500px; /* largeur maxi conteneur */
@@ -39,16 +39,6 @@ main {
     gap: 30px; /* écart entre les enfants du conteneur */
 }
 /* conteneur main & Sommaire */
-
-/* recettes - liste recettes */
-.conteneurListe {
-    display: flex; /* mode flexbox > enfants directs côte à côte */
-    max-width: 2500px; /* largeur maxi conteneur */
-    margin: 0 auto; /* 0 marge haut/bas + auto centrage horizontal */
-    padding: 20px; /* écart entre bord conteneur et intérieur conteneur */
-    gap: 30px; /* écart entre les enfants du conteneur */
-}
-/* recettes - liste recettes */
 
 /* recettes - tableau liste recettes */
 .tableauliens {
@@ -102,8 +92,7 @@ main {
 /* recettes - tableau liste recettes */
 
 /* Sommaire */
-.sidebar {
-    width: 300px; /* taille fixe */
+.somm {
     flex-shrink: 0; /* conserve la taille fixe */
     background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
     padding: 20px; /* écart entre bord et intérieur */
@@ -113,6 +102,9 @@ main {
     position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
     top: 40px; /* position mini haut de l'écran */
 }
+.sidebar {width: 300px;}
+.ingredients {width: 500px;}
+
 .sidebar h2 {
     text-align: center;
     margin-top: 0;
@@ -213,17 +205,6 @@ main {
 /* Liens de navigation */
 
 /* Ingrédients */
-.ingredients {
-    width: 500px; /* taille fixe */
-    flex-shrink: 0; /* conserve la taille fixe */
-    background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
-    padding: 20px; /* écart entre bord et intérieur */
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 20px; /* coins arrondis */
-    height: fit-content; /* hauteur s'ajuste au contenu */
-    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
-    top: 40px; /* position mini haut de l'écran */
-}
 .ingredients h2 {
     text-align: center;
     margin-top: 0px;
@@ -285,20 +266,16 @@ img[src*="ingr/"] {
         flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
         padding: 10px;
     }
-    .conteneurListe {
-        flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
-        padding: 10px;
-    }
-    .sidebar {
+    .somm {
         width: 100%; /* prend toute la largeur */
         flex-shrink: 1; /* autorise de rétrécir */
         position: static; /* désactive l'option sticky */
     }
-    .ingredients {
-        width: 100%; /* prend toute la largeur */
-        flex-shrink: 1; /* autorise de rétrécir */
-        position: static; /* désactive l'option sticky */
+    /* Liens de navigation */
+    .bpnavig {
+        position: static;
     }
+    /* Liens de navigation */
 }
 /* Affichage sur mobile */
 
