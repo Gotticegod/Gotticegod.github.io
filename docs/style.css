@@ -44,7 +44,7 @@ main {
 .tableauliens {
     table-layout: fixed;    /* respecte les largeurs définies */
     width: 100%;
-    background: rgba(204, 17, 17, 0.733); /* fond blanc avec 90% d'opacité */
+    background: rgba(204, 17, 17, 0.733); /* fond rouge avec 90% d'opacité */
     padding: 10px; /* écart entre bord et intérieur */
     border: 2px solid white;
     border-radius: 20px; /* coins arrondis */
@@ -56,14 +56,14 @@ main {
 }
 .tableauliens th {
     border: none;
-    vertical-align: center;
+    vertical-align: middle;
     text-decoration: underline;
     font-size: clamp(1rem, 2vw, 2.5rem);
     padding: clamp(5px, 1vw, 15px);
 }
 .tableauliens td {
     border: none;
-    vertical-align: center;
+    vertical-align: middle;
     font-size: clamp(0.8rem, 1.8vw, 2rem);
     padding: clamp(5px, 1vw, 15px);
     margin: clamp(2px, 1vw, 5px);
@@ -163,7 +163,7 @@ main {
 .etapes h2 {
     font-size: clamp(1.4rem, 1.5vw, 2.5rem);
     color: rgb(255, 255, 255);
-    font-style: bold;
+    font-weight: bold;
     text-decoration: underline;
     margin-bottom: 5px;
 }  
@@ -219,14 +219,12 @@ main {
     font-size: 2rem;
     color: #2c3e50;
     font-weight: bold;
-    align-items: center;         /* centrés verticalement */
 }
 .cptnbpers button {
     width: 45px;
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
-    align-items: center;
     height: 45px;
     font-size: 2rem;
     border: 2px solid #333;
@@ -278,64 +276,3 @@ img[src*="ingr/"] {
     /* Liens de navigation */
 }
 /* Affichage sur mobile */
-
-
-
-
-
-
-
-
-
-
-
-
-/* OLD Liste toutes recettes */
-.listeR {
-    background: rgba(204, 17, 17, 0.733); /* fond blanc avec 90% d'opacité */
-    padding: 20px; /* écart entre bord et intérieur */
-    border: 2px solid white;
-    border-radius: 20px; /* coins arrondis */
-    height: fit-content; /* hauteur s'ajuste au contenu */
-    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
-    top: 20px; /* position mini haut de l'écran */
-}
-.listeR h2 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 2.5rem;
-    color:rgb(255, 255, 255);
-    text-decoration: underline;
-}
-.listeR > ul {
-    list-style: square;
-    padding-left: 20px;        /* indenté sous le titre */
-    margin: 5px 0;
-    font-size: 1.8rem;
-}
-.listeR > ul > li {
-    margin-bottom: 5px;
-    color: rgb(255, 255, 255);
-}
-.listeR > ul > li > a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-}
-.listeR > ul > li > ul {
-    list-style: circle;
-    padding-left: 30px;        /* indenté sous le titre */
-    margin: 2px 0;
-    font-size: 1.4rem;
-}
-.listeR > ul > li > ul > li {
-    margin-bottom: 2px;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-}
-.listeR > ul > li > ul > li > a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-/* OLD Liste toutes recettes */
