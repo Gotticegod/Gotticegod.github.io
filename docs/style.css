@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box; /* règle pour inclure le padding dans les width */
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: sans-serif; /*  */
     max-width: 2500px;
@@ -90,6 +93,12 @@ main {
     font-weight: bold;
     text-decoration: none;
 }
+.tableauliens a:hover {
+    color: rgb(204, 17, 17);
+    background-color: rgb(211, 104, 4);
+    font-weight: bold;
+    text-decoration: none;
+}
 /* recettes - tableau liste recettes */
 
 /* Sommaire */
@@ -107,6 +116,7 @@ main {
 .sidebar h2 {
     text-align: center;
     margin-top: 0;
+    margin-bottom: 0;
     font-size: 4rem;
     color: #2c3e50;
 }
@@ -120,6 +130,13 @@ main {
     list-style: none; /* enlève la petite flèche par défaut */
     color: #e74c3c;
     font-size: 2rem;
+    padding-left: 8px;
+}
+.sidebar summary:hover { 
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: 4px solid #e74c3c;
+    border-radius: 8px; /* coins arrondis */
 }
 .sidebar summary::before { /* La flèche personnalisée */
     content: "▶";              /* triangle fermé */
@@ -146,6 +163,7 @@ main {
 }
 .sidebar details a:hover {
     color: #e74c3c;
+    font-weight: bold;
 }
 /* Sommaire */
 
@@ -165,7 +183,7 @@ main {
     margin-bottom: 5px;
 }  
 .etapes {
-    margin-bottom: clamp(25px, 2vw, 50px);
+    margin-bottom: clamp(100px, 2vw, 200px);
 }
 /* recettes - Etapes */
 
@@ -178,6 +196,19 @@ main {
     color: #e74c3c;
     padding: 8px;
     background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000; /* ordre d'empilement > plus valeur haute plus c'est au-dessus */
+}
+.bpnavig:hover {
+    background-color: #e74c3c;
+    border: 4px solid #e74c3c;
+    color: #ffffff;
+}
+.bpnavig:focus-visible {
+    outline: 3px solid #2c3e50;
+    outline-offset: 2px;
 }
 /* Liens de navigation */
 
@@ -223,7 +254,8 @@ main {
     border-radius: 50%;          /* boutons ronds */
 }
 .cptnbpers button:hover {
-    background: #eee;            /* fond gris au survol */
+    background: #2c3e50;            /* fond gris au survol */
+    color: white;
 }
 .cptnbpers span {
     font-size: 2rem;
