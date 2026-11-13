@@ -9,8 +9,8 @@ function CalcPers(quantite) {
         personnes = 1;
     }
     // Empêche de monter au-dessus de 10
-    if (personnes > 10) {
-        personnes = 10;
+    if (personnes > 20) {
+        personnes = 20;
     }
     CalcIngr(personnes);
 }

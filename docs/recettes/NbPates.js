@@ -9,8 +9,8 @@ function CalcPates(quantite) {
         pates = 1;
     }
     // Empêche de monter au-dessus de 5
-    if (pates > 5) {
-        pates = 5;
+    if (pates > 10) {
+        pates = 10;
     }
     CalcIngr(pates);
 }
