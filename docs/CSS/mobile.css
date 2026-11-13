@@ -1,0 +1,20 @@
+
+
+/* Affichage sur mobile */
+@media (max-width: 768px) { /* si l'écran fait moins de 768px */
+    .conteneur {
+        flex-direction: column; /* place les enfants l'un au-dessus de l'autre */
+        padding: 10px;
+    }
+    .somm {
+        width: 100%; /* prend toute la largeur */
+        flex-shrink: 1; /* autorise de rétrécir */
+        position: static; /* désactive l'option sticky */
+    }
+    /* Liens de navigation */
+    .bpnavig {
+        position: static;
+    }
+    /* Liens de navigation */
+}
+/* Affichage sur mobile */

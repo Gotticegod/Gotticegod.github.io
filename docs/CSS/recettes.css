@@ -1,0 +1,74 @@
+/* CSS des recettes */
+
+/* recettes - tableau liste recettes */
+.tableauliens {
+    table-layout: fixed;    /* respecte les largeurs définies */
+    width: 100%;
+    background: rgba(204, 17, 17, 0.733); /* fond rouge avec 90% d'opacité */
+    padding: 10px; /* écart entre bord et intérieur */
+    border: 2px solid white;
+    border-radius: 20px; /* coins arrondis */
+    height: fit-content; /* hauteur s'ajuste au contenu */
+    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
+    top: 20px; /* position mini haut de l'écran */
+    margin-bottom: 20px;
+    padding-top: clamp(50px, 5vw, 80px);
+}
+.tableauliens th {
+    border: none;
+    vertical-align: middle;
+    text-decoration: underline;
+    font-size: clamp(1rem, 2vw, 2.5rem);
+    padding: clamp(5px, 1vw, 15px);
+}
+.tableauliens td {
+    border: none;
+    vertical-align: middle;
+    font-size: clamp(0.8rem, 1.8vw, 2rem);
+    padding: clamp(5px, 1vw, 15px);
+    margin: clamp(2px, 1vw, 5px);
+}
+.tableauliens .titre1, .cell1 {
+    text-align: center;
+}
+.tableauliens .titre2, .cell2 {
+    text-align: center;
+}
+.tableauliens .titre2 {
+    transform: rotate(-45deg) translate(40%, 0);
+    transform-origin: bottom center;
+}
+.tableauliens a {
+    color: rgb(211, 104, 4);
+    font-weight: bold;
+    text-decoration: none;
+}
+.tableauliens a:hover {
+    color: rgb(204, 17, 17);
+    background-color: rgb(211, 104, 4);
+    font-weight: bold;
+    text-decoration: none;
+}
+/* recettes - tableau liste recettes */
+
+
+
+/* recettes - Etapes */
+.etapes h2 {
+    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}  
+.etapes p {
+    font-size: clamp(1rem, 1.1vw, 2rem);
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}  
+.etapes {
+    margin-bottom: clamp(100px, 2vw, 200px);
+}
+/* recettes - Etapes */

@@ -1,0 +1,55 @@
+/* CSS des ingrédients */
+
+/* Ingrédients */
+.ingredients h2 {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+.cptnbpers {
+    text-align: center;
+    margin-top: 0;
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+.cptnbpers button {
+    width: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    height: 45px;
+    font-size: 2rem;
+    border: 2px solid #333;
+    background: white;
+    cursor: pointer;             /* main au survol */
+    border-radius: 50%;          /* boutons ronds */
+}
+.cptnbpers button:hover {
+    background: #2c3e50;            /* fond gris au survol */
+    color: white;
+}
+.cptnbpers span {
+    font-size: 2rem;
+    font-weight: bold;
+    min-width: 30px;            /* évite que ça bouge quand le nombre change de largeur */
+    text-align: center;
+}
+.ingredients summary {
+    text-align: left;
+    padding: 6px 0;
+    list-style: none; /* enlève la petite flèche par défaut */
+    color: #e74c3c;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+/* Toutes les images dont le src contient "ingr/" */
+img[src*="ingr/"] {
+    width: 65px;
+    vertical-align: middle;
+    margin-right: 16px;
+}
+/* Toutes les images dont le src contient "ingr/" */

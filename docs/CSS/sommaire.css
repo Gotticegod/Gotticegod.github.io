@@ -1,0 +1,68 @@
+/* CSS du Sommaire */
+
+.somm {
+    flex-shrink: 0; /* conserve la taille fixe */
+    background: rgba(255, 255, 255, 0.87); /* fond blanc avec 90% d'opacité */
+    padding: 20px; /* écart entre bord et intérieur */
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px; /* coins arrondis */
+    height: fit-content; /* hauteur s'ajuste au contenu */
+    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
+    top: 40px; /* position mini haut de l'écran */
+}
+.sidebar {width: 300px;}
+.ingredients {width: 500px;}
+
+.sidebar h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 4rem;
+    color: #2c3e50;
+}
+.sidebar details { /* Le bloc déroulant */
+    margin-bottom: 8px;
+}
+.sidebar summary { /* Le titre cliquable */
+    cursor: pointer; /* main qui pointe au survol */
+    font-weight: bold;
+    padding: 6px 0;
+    list-style: none; /* enlève la petite flèche par défaut */
+    color: #e74c3c;
+    font-size: 2rem;
+    padding-left: 8px;
+}
+.sidebar summary:hover { 
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: 4px solid #e74c3c;
+    border-radius: 8px; /* coins arrondis */
+}
+.sidebar summary::before { /* La flèche personnalisée */
+    content: "▶";              /* triangle fermé */
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 1.5rem;
+    transition: transform 0.2s; /* rotation animée */
+}
+.sidebar details[open] summary::before { /* Quand ouvert : la flèche pivote */
+    transform: rotate(90deg);  /* ▶ devient ▼ */
+}
+.sidebar details ul { /* Les sous-liens */
+    list-style: none;
+    padding-left: 20px;        /* indenté sous le titre */
+    margin: 5px 0;
+}
+.sidebar details li {
+    margin-bottom: 5px;
+}
+.sidebar details a {
+    text-decoration: none;
+    color: rgb(223, 105, 92);
+    font-size: 1.7rem;
+}
+.sidebar details a:hover {
+    color: #e74c3c;
+    font-weight: bold;
+}
+/* Sommaire */
