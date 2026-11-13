@@ -13,7 +13,7 @@ body {
     margin: 5px auto;
     padding: 0 20px;
     line-height: 1.6;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("images/fond.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("/images/fond.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

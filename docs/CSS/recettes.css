@@ -60,7 +60,19 @@
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 5px;
-}  
+} 
+.etapes h2::before {
+    content: "\27A4";        /* le même glyph que &#10148; */
+    display: inline-block;
+    color: #ffffff;
+    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+/* Bonus : la flèche avance au survol */
+.etapes h2:hover::before {
+    transform: translateX(4px);
+}
 .etapes p {
     font-size: clamp(1rem, 1.1vw, 2rem);
     color: rgb(255, 255, 255);
