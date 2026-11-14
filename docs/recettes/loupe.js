@@ -37,10 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
             let ratio = Math.min(distance / RAYON, 1); //   0 = la ligne est exactement au centre - 1 = elle est à RAYON px ou plus loin
             ratio = ratio * ratio * (3 - 2 * ratio); // Adoucissement effet
             const facteur = ZOOM_MAX - ratio * (ZOOM_MAX - ZOOM_MIN); // Règle de trois : on interpole entre ZOOM_MAX (au centre) et ZOOM_MIN (au bord de la zone)
-            ligne.style.transform = `scale(${facteur})`; // Application. transform ne déplace PAS le document : la ligne grossit par-dessus ses voisines, sans reflow.        
+            const facteurQté = Math.round(facteur * 20) / 20;   // paliers de 0,05
+            ligne.style.transform = `scale(${facteurQté})`;
+            //ligne.style.transform = `scale(${facteur})`; // Application. transform ne déplace PAS le document : la ligne grossit par-dessus ses voisines, sans reflow.        
             const progression = (facteur - ZOOM_MIN) / (ZOOM_MAX - ZOOM_MIN); // Le dégradé de transparence suit le même mouvement : ce qui est net est opaque, ce qui est loin s'estompe.
             ligne.style.opacity = (0.45 + 0.55 * progression).toFixed(3); // (0.45 + 0.55 × le facteur normalisé entre 1 et ZOOM_MAX)
-        
         });
     }
 
