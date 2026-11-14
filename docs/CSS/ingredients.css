@@ -1,6 +1,8 @@
 /* CSS des ingrédients */
 
-/* Ingrédients */
+/* ============================================================*/
+/* =============          INGREDIENTS             =============*/
+/* ============================================================*/
 .ingredients h2 {
     text-align: center;
     margin-top: 0px;
@@ -46,10 +48,46 @@
     font-size: clamp(1.4rem, 2vw, 2rem);
 }
 
-/* Toutes les images dont le src contient "ingr/" */
+/* ============================================================
+/* =============       IMAGES INGREDIENTS         =============
+/* ============================================================
 img[src*="ingr/"] {
     width: 65px;
     vertical-align: middle;
     margin-right: 16px;
 }
-/* Toutes les images dont le src contient "ingr/" */
+
+/* ============================================================*/
+/* =============         BULLES D AIDE            =============*/
+/* ============================================================*/
+.tip {
+  position: relative;
+  /*display: inline-block;*/
+  cursor: help;
+}
+.tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 220px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #1f2937;
+  color: #f9fafb;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+/* Apparition au survol */
+.tip:hover::after,
+.tip:hover::before {
+  opacity: 1;
+}

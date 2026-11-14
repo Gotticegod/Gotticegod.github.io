@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="/CSS/general.css">
+    <link rel="stylesheet" href="/CSS/sommaire.css">
+    <link rel="stylesheet" href="/CSS/ingredients.css">
+    <link rel="stylesheet" href="/CSS/recettes.css">
+    <link rel="stylesheet" href="/CSS/mobile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test loupe</title>
+</head>
+
+<script src="/recettes/NbPersonnes.js"></script>
+<script src="/recettes/loupe.js"></script>
+
+<body>
+ <div class="conteneurT">
+        <main>
+            <div class="etapesT">
+                <h1>Galets Bretons au beurre salé :</h1>
+                    <h2>Etapes :</h2>
+                        <p>1 - Préchauffer le four thermostat 8</p>
+                        <p>2 - Découper le beurre en petits morceaux et laisser ramollir</p>
+                        <p>3 - Dans un saladier, mélanger la farine, le sucre, le sucre vanillé, le sel et la levure</p>
+                        <p>4 - Ajouter les morceaux de beurre ramollis et mélanger jusqu'à obtenir une pate sableuse</p>
+                        <p>5 - Ajouter l'oeuf et pétrir à la main pour former une boule</p>
+                        <p>6 - La boule oit être très élastique et très compacte</p>
+                        <p>7 - Laisser reposer la boule pendant 1h au frigo</p>
+                        <p>8 - Fariner le plan de travail et étaler la boule dessus avec un rouleau à patisserie</p>
+                        <p>9 - Une fois bien étalée, découper des ronds dans la pâte avec un emporte-pièce</p>
+                        <p>10 - Déposer les ronds sur une feuille de papier sulfurisée</p>
+                        <p>11 - Décorer la surface avec un couteau, et étaler le jaune d'oeuf (dilué dans 5cl d'eau) dessus au pinceau</p>
+                        <p>12 - Enfourner mi-hauteur pour 10min. Les galets doivent être dorés</p>
+            </div>  
+            <a href="/recettes/sauce.html" class="bpnavig">&#8617 Retour</a>
+        </main>
+
+        
+        <!-- ******************* Ingrédients ******************* -->
+
+        <nav class="somm ingredients">
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+            <div id="ingr1" data-poids="20"></div>
+            <div id="ingr2" data-poids="13"></div>
+            <div id="ingr3" data-poids="12.5"></div>
+            <div id="ingr4" data-poids="0.1"></div>
+            <div id="ingr5" data-poids="0.05"></div>
+            <div id="ingr6" data-poids="0.1"></div>
+            <div id="ingr7" data-poids="0.1"></div>
+            <div id="ingr8" data-poids="0.1"></div>
+            <div id="ingr9" data-poids="0"></div>
+            <div id="ingr10" data-poids="0"></div>
+            <div id="ingr11" data-poids="0"></div>
+            <div id="ingr12" data-poids="0"></div>
+            <div id="ingr13" data-poids="0"></div>
+            <div id="ingr14" data-poids="0"></div>
+            <div id="ingr15" data-poids="0"></div>
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+
+            <h2>Ingrédients</h2>
+            <div class="cptnbpers">
+                <button onclick="CalcPers(-1)">-</button>
+                <span id="nbPersonnes">6</span>
+                <button onclick="CalcPers(1)">+</button>
+            </div>
+            <h2>Personnes</h2>
+                <summary><img src="/recettes/ingr/farine.png" alt="Farine" loading="lazy"><span id="totingr1">120</span>g - Farine</summary>
+                <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr2">78</span>g - Sucre</summary>
+                <summary><img src="/recettes/ingr/beurresale.png" alt="beurre salé" loading="lazy"><span id="totingr3">75</span>g - Beurre salé</summary>
+                <summary><img src="/recettes/ingr/sucrevanille.png" alt="Sucre vanillé" loading="lazy"><span id="totingr4">0.6</span> sachet - Sucre vanillé</summary>
+                <summary><img src="/recettes/ingr/levurechimique.png" alt="levure chimique" loading="lazy"><span id="totingr5">0.3</span> sachet - Levure chimique</summary>
+                <summary><img src="/recettes/ingr/Oeuf.png" alt="oeuf" loading="lazy"><span id="totingr6">0.6</span> - Oeuf</summary>
+                <summary><img src="/recettes/ingr/Oeuf.png" alt="jauneoeuf" loading="lazy"><span id="totingr7">0.6</span> jaune - Oeuf</summary>
+                <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr8">0.6</span> pincée - Sel</summary>
+                
+        </nav>
+        <!-- ******************* Ingrédients ******************* -->
+
+    </div>
+</body>    
+</html>
