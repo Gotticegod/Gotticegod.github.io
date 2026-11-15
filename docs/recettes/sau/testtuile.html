@@ -11,33 +11,59 @@
     <title>Test tuiles</title>
 </head>
 
-<script src="/recettes/NbPersonnes.js"></script>
+<script src="/recettes/NbPersonnes.js" defer></script>
+<script src="/recettes/cuisinons.js" defer></script>
 
 <body>
  <div class="conteneur">
         <main>
-            <div class="etapes">
-                <h1>Test tuiles :</h1>
+            <h1>Test tuiles :</h1>
+            <button type="button" class="bpnavig cuisine" id="bpCuisine" aria-pressed="false">Cuisinons ! :D</button>
+            <p class="cptetapes" id="cptetapes" aria-live="polite"></p>
+            <button type="button" class="fleche fleche--g" id="flecheG" aria-label="Étape précédente">&#8592;</button>
+            <button type="button" class="fleche fleche--d" id="flecheD" aria-label="Étape suivante">&#8594;</button>
+            <ol class="etapes" id="etapes">
+                    <li class="etape"> 
                     <h2>Etape 1 :</h2>
                         <p>- Préchauffer le four thermostat 8</p>
                         <p>- Découper le beurre en petits morceaux et laisser ramollir</p>
-                    <h2>Etape 2 :</h2>
+                        <p class="detail">libre</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 2 :</h2>
                         <p>- Dans un saladier, mélanger la farine, le sucre, le sucre vanillé, le sel et la levure</p>
                         <p>- Ajouter les morceaux de beurre ramollis et mélanger jusqu'à obtenir une pate sableuse</p>
-                    <h2>Etape 3 :</h2>
+                        <p class="detail">libre</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 3 :</h2>
                         <p>- Ajouter l'oeuf et pétrir à la main pour former une boule</p>
                         <p>- La boule oit être très élastique et très compacte</p>
-                    <h2>Etape 4 :</h2>
+                        <p class="detail">libre</p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 4 :</h2>
                         <p>- Laisser reposer la boule pendant 1h au frigo</p>
-                    <h2>Etape 5 :</h2>
+                        <p class="detail">libre</p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 5 :</h2>
                         <p>- Fariner le plan de travail et étaler la boule dessus avec un rouleau à patisserie</p>
                         <p>- Une fois bien étalée, découper des ronds dans la pâte avec un emporte-pièce</p>
-                    <h2>Etape 6 :</h2>
+                        <p class="detail">libre</p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 6 :</h2>
                         <p>- Déposer les ronds sur une feuille de papier sulfurisée</p>
                         <p>- Décorer la surface avec un couteau, et étaler le jaune d'oeuf (dilué dans 5cl d'eau) dessus au pinceau</p>
-                    <h2>Etape 7 :</h2>
+                        <p class="detail">libre</p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 7 :</h2>
                         <p>- Enfourner mi-hauteur pour 10min. Les galets doivent être dorés</p>
-            </div>  
+                        <p class="detail">libre</p>
+                    </li>
+            </ol>  
             <a href="/recettes/sau.html" class="bpnavig">&#8617 Retour</a>
         </main>
 

@@ -69,3 +69,4 @@ main {
     outline: 3px solid #2c3e50;
     outline-offset: 2px;
 }
+.cuisine[aria-pressed="true"] { background: #27ae60; }

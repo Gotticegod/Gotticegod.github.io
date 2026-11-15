@@ -16,5 +16,10 @@
         position: static;
     }
     /* Liens de navigation */
+
+/* masquer flèches tuiles recettes si tactile */
+@media (pointer: coarse) {
+    .fleche { display: none !important; }
+}
 }
 /* Affichage sur mobile */

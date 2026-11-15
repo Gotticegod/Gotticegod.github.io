@@ -54,10 +54,10 @@
 
 /* ============================================================*/
 /* =============        ETAPES DES RECETTES       =============*/
+/* =============        AFFICHAGE CLASSIQUE       =============*/
 /* ============================================================*/
 .etapes h2 {
     font-size: clamp(1.4rem, 1.5vw, 2.5rem);
-    color: rgb(255, 255, 255);
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 5px;
@@ -76,11 +76,86 @@
 }
 .etapes p {
     font-size: clamp(1rem, 1.1vw, 2rem);
-    color: rgb(255, 255, 255);
     font-style: normal;
     margin-top: 5px;
     margin-bottom: 5px;
 }  
 .etapes {
+    color: #ffffff;
     margin-bottom: clamp(100px, 2vw, 200px);
 }
+
+/* ============================================================*/
+/* =============        ETAPES DES RECETTES       =============*/
+/* =============        AFFICHAGE "TUILES"        =============*/
+/* ============================================================*/
+
+/* aucune règle ne s'appplique tant que body n'a pas la classe .cuisine */
+
+body.cuisine .etapes { /* liste des étapes */
+    display: flex;
+    flex-wrap: nowrap;          /* interdit explicitement l'empilement */
+    gap: 16px;
+    margin: 0;
+    padding: 0 16px 16px;
+    height: 62vh; /* Une piste d'une seule tuile de haut */
+    min-height: 320px;
+    align-items: stretch;
+    overflow-x: auto;                    /* conteneur défilant */
+    scroll-snap-type: x mandatory;       /* s'arrête toujours sur une tuile */
+    overscroll-behavior-x: contain;      /* le balayage ne déclenche plus le balayage "retour" du navigateur */
+    scrollbar-width: none;               /* pas d'ascenseur horizontal */
+}
+body.cuisine .etape { /* étapes des recettes */
+    flex: 0 0 86%;                       /* 86 % : la tuile suivante dépasse, ça invite à swiper */
+    overflow-y: auto;                    /* si le texte d'une étape dépasse la tuile */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;            /* une swipe = une étape, jamais trois d'un coup */
+    list-style: none;
+    /* le style de ta tuile : celui du sommaire */
+    background: rgba(255, 255, 255, 0.87);
+    color: #2c3e50;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+body.cuisine .etape h2 { margin-top: 0; }
+body.cuisine .etapes h2::before { color: #e74c3c; } /* flèche sur tuile claire */
+
+/* Les détails : discrets en mode classique, mis en avant en mode cuisine */
+.detail { font-size: 0.9em; opacity: 0.7; }
+body.cuisine .detail {
+    opacity: 1;
+    font-size: 1.05em;
+    border-left: 4px solid #e74c3c;
+    padding-left: 12px;
+}
+
+/* flèches de défilement des tuiles */
+.fleche {
+    display: none;
+    position: fixed;
+    top: 50%;
+    translate: 0 -50%;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 600;
+}
+.fleche--g   { left: 12px; }
+.fleche--d   { right: 12px; }
+body.cuisine .fleche { display: block; }
+
+/* compteur du numéro d'étape si tuiles affichées */
+.cptetapes {
+    display: none;
+    text-align: center;
+    margin: 12px 0;
+    font-size: 1.2rem;
+}
+body.cuisine .cptetapes { display: block; }
