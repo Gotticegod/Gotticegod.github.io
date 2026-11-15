@@ -1,6 +1,8 @@
 /* CSS des recettes */
 
-/* recettes - tableau liste recettes */
+/* ============================================================*/
+/* =============     TABLEAU LISTE RECETTES       =============*/
+/* ============================================================*/
 .tableauliens {
     table-layout: fixed;    /* respecte les largeurs définies */
     width: 100%;
@@ -49,11 +51,10 @@
     font-weight: bold;
     text-decoration: none;
 }
-/* recettes - tableau liste recettes */
 
-
-
-/* recettes - Etapes */
+/* ============================================================*/
+/* =============        ETAPES DES RECETTES       =============*/
+/* ============================================================*/
 .etapes h2 {
     font-size: clamp(1.4rem, 1.5vw, 2.5rem);
     color: rgb(255, 255, 255);
@@ -82,35 +83,4 @@
 }  
 .etapes {
     margin-bottom: clamp(100px, 2vw, 200px);
-}
-/* recettes - Etapes */
-
-
-
-/* test loupe */
-.etapesT {
-    /* grid et non flex : le "gap" ne se fusionne jamais,
-       contrairement aux marges adjacentes qui s'annulent partiellement.
-       On obtit un couloir prévisible entre les lignes. */
-    display: grid;
-    gap: 2.5em;
-}
-
-.etapesT .lg-loupe {
-    margin: 0;                      /* grid s'occupe de l'espacement */
-    transform-origin: left center;
-    transform: scale(1);
-    opacity: 0.45;
-}
-
-/* À SUPPRIMER une fois les réglages faits */
-.conteneurT::after {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 0;
-    right: 0;
-    border-top: 1px dashed red;
-    z-index: 9999;
-    pointer-events: none;
 }

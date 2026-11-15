@@ -1,9 +1,10 @@
 /* CSS des parties générales */
-
+/* ============================================================*/
+/* =============          Body, Main              =============*/
+/* ============================================================*/
 * {
     box-sizing: border-box; /* règle pour inclure le padding dans les width */
 }
-
 html {
     scroll-behavior: smooth;
 }
@@ -32,7 +33,9 @@ h1 { color: #f9fbfc; }
 main {
     flex: 1; /* prend tout l'espace restant après la sidebar */
 }
-/* conteneur main & Sommaire & recettes */
+/* ============================================================*/
+/* =============      MAIN+SOMMAIRE+RECETTE       =============*/
+/* ============================================================*/
 .conteneur {
     display: flex; /* mode flexbox > enfants directs côte à côte */
     max-width: 2500px; /* largeur maxi conteneur */
@@ -40,9 +43,10 @@ main {
     padding: 20px; /* écart entre bord conteneur et intérieur conteneur */
     gap: 30px; /* écart entre les enfants du conteneur */
 }
-/* conteneur main & Sommaire */
 
-/* Liens de navigation */
+/* ============================================================*/
+/* =============          BP NAVIGATION           =============*/
+/* ============================================================*/
 .bpnavig {
     font-size: clamp(1.2rem, 2vw, 2.5rem);
     text-decoration: none;
@@ -65,4 +69,3 @@ main {
     outline: 3px solid #2c3e50;
     outline-offset: 2px;
 }
-/* Liens de navigation */
