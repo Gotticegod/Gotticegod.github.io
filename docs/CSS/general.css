@@ -69,9 +69,9 @@ main {
     outline: 3px solid #2c3e50;
     outline-offset: 2px;
 }
-.bpnavig .cuisine {
-    bottom: 50px;
-    left: 20px;
+.bpcuis {
+    bottom:bottom;
+    right: right;
 }
 
 .cuisine[aria-pressed="true"] { background: #27ae60; }
