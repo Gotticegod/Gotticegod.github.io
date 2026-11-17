@@ -18,7 +18,6 @@
  <div class="conteneur">
         <main>
             <h1>Test tuiles :</h1>
-            <button type="button" class="bpnavig bpcuis" id="bpCuisine" aria-pressed="false">Lancer la recette</button>
             <p class="cptetapes" id="cptetapes" aria-live="polite"></p>
             <button type="button" class="fleche fleche--g" id="flecheG" aria-label="Étape précédente">&#8592;</button>
             <button type="button" class="fleche fleche--d" id="flecheD" aria-label="Étape suivante">&#8594;</button>
@@ -64,7 +63,6 @@
                         <p class="detail">libre</p>
                     </li>
             </ol>  
-            <a href="/recettes/sau.html" class="bpnavig">&#8617 Retour</a>
         </main>
 
         
@@ -88,14 +86,23 @@
             <div id="ingr14" data-poids="0"></div>
             <div id="ingr15" data-poids="0"></div>
             <!-- ******* valeurs initiales pour 1 personne ******* -->
-
-            <h2>Ingrédients</h2>
-            <div class="cptnbpers">
-                <button onclick="CalcPers(-1)">-</button>
-                <span id="nbPersonnes">6</span>
-                <button onclick="CalcPers(1)">+</button>
+            <div class="barre-bp">
+                <div class="bp-g">
+                    <a href="/recettes/sauce.html" class="bpgauche">&#10008 Retour</a>
+                </div>
+                <div>
+                    <h2>Ingrédients</h2>
+                    <div class="cptnbpers">
+                        <button onclick="CalcPers(-1)">-</button>
+                        <span id="nbPersonnes">6</span>
+                        <button onclick="CalcPers(1)">+</button>
+                    </div>
+                    <h2>Personnes</h2>
+                </div>
+                <div class="bp-d">
+                    <button type="button" class="bpdroit" id="bpCuisine" aria-pressed="false">&#9658 Lancer</button>
+                </div>
             </div>
-            <h2>Personnes</h2>
                 <summary><img src="/recettes/ingr/farine.png" alt="Farine" loading="lazy"><span id="totingr1">120</span>g - Farine</summary>
                 <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr2">78</span>g - Sucre</summary>
                 <summary><img src="/recettes/ingr/beurresale.png" alt="beurre salé" loading="lazy"><span id="totingr3">75</span>g - Beurre salé</summary>

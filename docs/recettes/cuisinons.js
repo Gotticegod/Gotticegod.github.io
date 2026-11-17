@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bouton.addEventListener("click", function () {
         const actif = document.body.classList.toggle("cuisine");
         bouton.setAttribute("aria-pressed", actif);
-        bouton.textContent = actif ? "Voir toute la recette" : "Cuisinons ! :)";
+        bouton.textContent = actif ? "■ Stopper" : "▶ Lancer";
         if (actif) maj();
     });
 

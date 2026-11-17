@@ -70,8 +70,12 @@ main {
     outline-offset: 2px;
 }
 .bpcuis {
-    position: absolute;
-    
+    display: block;          /* un <button> est inline-block par défaut */
+    width: fit-content;      /* le bloc fait exactement la taille du texte */
+    margin-inline: auto;     /* l'espace restant se répartit des deux côtés */
+    position:auto;
+    bottom: auto;
+    left: auto;
 }
 
 .cuisine[aria-pressed="true"] { background: #27ae60; }

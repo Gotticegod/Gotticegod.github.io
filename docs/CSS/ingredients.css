@@ -20,19 +20,58 @@
 }
 .cptnbpers button {
     width: 45px;
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     height: 45px;
     font-size: 2rem;
     border: 2px solid #333;
     background: white;
+    font: inherit;
     cursor: pointer;             /* main au survol */
     border-radius: 50%;          /* boutons ronds */
+}
+.barre-bp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
 }
 .cptnbpers button:hover {
     background: #2c3e50;            /* fond gris au survol */
     color: white;
+}
+.bpgauche,
+.bpdroit {
+    /* Ce qui normalise <a> et <button> */
+    display: inline-flex;        /* le lien accepte height */
+    align-items: center;         /* centrage vertical */
+    justify-content: center;
+    font: inherit;               /* le bouton hérite de la police */
+    font-size: clamp(1.2rem, 2vw, 2.5rem);
+    appearance: none;            /* vire l'habillage natif du bouton */
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    /* Le style en lui-même */
+    height: 80px;
+    padding-inline: 16px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #e74c3c;
+    background-color: #fff;
+    cursor: pointer;
+}
+.bpgauche:hover,
+.bpdroit:hover {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: #fff;
+}
+.bpgauche:focus-visible,
+.bpdroit:focus-visible {
+    outline: 3px solid #2c3e50;
+    outline-offset: 2px;
 }
 .cptnbpers span {
     font-size: 2rem;
