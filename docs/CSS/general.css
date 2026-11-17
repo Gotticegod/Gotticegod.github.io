@@ -55,9 +55,8 @@ main {
     color: #e74c3c;
     padding: 8px;
     background-color: rgb(255, 255, 255);
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
+    position:absolute;
+    
     z-index: 1000; /* ordre d'empilement > plus valeur haute plus c'est au-dessus */
 }
 .bpnavig:hover {
@@ -70,8 +69,8 @@ main {
     outline-offset: 2px;
 }
 .bpcuis {
-    bottom:bottom;
-    right: right;
+    bottom:auto;
+    left: auto;
 }
 
 .cuisine[aria-pressed="true"] { background: #27ae60; }
