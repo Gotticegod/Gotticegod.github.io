@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // CLIC SUR BOUTON MODE TUILE
     bouton.addEventListener("click", function () {
-        const actif = document.body.classList.toggle("cuisine");
+        const actif = document.querySelector(".conteneur").classList.toggle("cuisine");
         bouton.setAttribute("aria-pressed", actif);
         bouton.textContent = actif ? "■\nStopper" : "▶\nLancer";
         if (actif) maj();

@@ -32,6 +32,7 @@ body a {
 h1 { color: #f9fbfc; }
 main {
     flex: 1; /* prend tout l'espace restant après la sidebar */
+    container-type: inline-size; /* pour utiliser les unités de taille conteneur sur ses éléments */
 }
 /* ============================================================*/
 /* =============      MAIN+SOMMAIRE+RECETTE       =============*/

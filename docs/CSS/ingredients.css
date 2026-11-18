@@ -19,17 +19,18 @@
     font-weight: bold;
 }
 .cptnbpers button {
-    width: 45px;
+    height: clamp(0.75rem, 10cqi, 5rem);
+    width: clamp(0.75rem, 10cqi, 5rem);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
-    font-size: 2rem;
     border: 2px solid #333;
     background: white;
     font: inherit;
+    font-size: clamp(0.75rem, 10cqi, 5rem);
     cursor: pointer;             /* main au survol */
     border-radius: 50%;          /* boutons ronds */
+    padding: clamp(0.75rem, 6cqi, 5rem);
 }
 .barre-bp {
     display: flex;
@@ -79,10 +80,12 @@
     outline-offset: 2px;
 }
 .cptnbpers span {
-    font-size: 2rem;
+    font-size: clamp(0.75rem, 10cqi, 5rem);
     font-weight: bold;
     min-width: 30px;            /* évite que ça bouge quand le nombre change de largeur */
     text-align: center;
+    padding-left: clamp(0.75rem, 3cqi, 5rem);
+    padding-right: clamp(0.75rem, 3cqi, 5rem);
 }
 .ingredients summary {
     text-align: left;
