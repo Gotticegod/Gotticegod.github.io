@@ -11,6 +11,7 @@
     height: fit-content; /* hauteur s'ajuste au contenu */
     position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
     top: 40px; /* position mini haut de l'écran */
+    container-type: inline-size; /* pour utiliser les unités de taille conteneur sur ses éléments */
 }
 .sidebar {width: 300px;}
 .ingredients {width: 500px;}

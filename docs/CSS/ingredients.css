@@ -37,6 +37,9 @@
     justify-content: space-between;
     gap: 12px;
 }
+.barre-bp > * {
+    flex-shrink: 0;
+}
 .cptnbpers button:hover {
     background: #2c3e50;            /* fond gris au survol */
     color: white;
@@ -48,19 +51,21 @@
     align-items: center;         /* centrage vertical */
     justify-content: center;
     font: inherit;               /* le bouton hérite de la police */
-    font-size: clamp(1.2rem, 2vw, 2.5rem);
+    font-size: clamp(0.75rem, 6cqi, 5rem);
     appearance: none;            /* vire l'habillage natif du bouton */
     text-decoration: none;
     text-align: center;
     box-sizing: border-box;
     /* Le style en lui-même */
-    height: 80px;
-    padding-inline: 16px;
+    height: fit-content;
+    width: fit-content;
+    padding-inline: 5px;
     border: 2px solid #333;
     border-radius: 5px;
     color: #e74c3c;
     background-color: #fff;
     cursor: pointer;
+    white-space: pre-line;   /* préserve les \n, collapse les espaces multiples */
 }
 .bpgauche:hover,
 .bpdroit:hover {
