@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const actif = document.querySelector(".conteneur").classList.toggle("cuisine");
         bouton.setAttribute("aria-pressed", actif);
         bouton.textContent = actif ? "■\nStopper" : "▶\nLancer";
+        document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
         if (actif) maj();
     });
 
@@ -50,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const auDebut = piste.scrollLeft < 20;
         const auFin   = (piste.scrollWidth - piste.scrollLeft - piste.clientWidth) < 10;
         flecheG.style.visibility = auDebut ? "hidden" : "visible";
+        flecheG.textContent = auDebut ? "⏴" : "⏴";
         flecheD.style.visibility = auFin   ? "hidden" : "visible";
+        flecheD.textContent = auDebut ? "⏵" : "⏵";
     }
     // ATTENTE DU SCROLL DE LA TUILE + DRAPEAU POUR EVITER LES REPETITIONS
     let enAttente = false;

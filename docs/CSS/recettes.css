@@ -56,8 +56,9 @@
 /* =============        ETAPES DES RECETTES       =============*/
 /* =============        AFFICHAGE CLASSIQUE       =============*/
 /* ============================================================*/
+.etapes::marker {display: none;}
 .etapes h2 {
-    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
+    font-size: clamp(2rem, 3vw, 5rem);
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 5px;
@@ -66,7 +67,7 @@
     content: "\27A4";        /* le même glyph que &#10148; */
     display: inline-block;
     color: #ffffff;
-    font-size: clamp(1.4rem, 1.5vw, 2.5rem);
+    font-size: clamp(2rem, 3vw, 5rem);
     margin-right: 10px;
     transition: transform 0.2s;
 }
@@ -75,12 +76,13 @@
     transform: translateX(4px);
 }
 .etapes p {
-    font-size: clamp(1rem, 1.1vw, 2rem);
+    font-size: clamp(1.5rem, 1.8vw, 2rem);
     font-style: normal;
     margin-top: 5px;
     margin-bottom: 5px;
 }  
 .etapes {
+    list-style-type: none;
     color: #ffffff;
     margin-bottom: clamp(100px, 2vw, 200px);
 }
@@ -107,7 +109,7 @@
     scrollbar-width: none;               /* pas d'ascenseur horizontal */
 }
 .conteneur.cuisine .etape { /* étapes des recettes */
-    flex: 0 0 86%;                       /* 86 % : la tuile suivante dépasse, ça invite à swiper */
+    flex: 0 0 95%;                       /* 86 % : la tuile suivante dépasse, ça invite à swiper */
     overflow-y: auto;                    /* si le texte d'une étape dépasse la tuile */
     scroll-snap-align: start;
     scroll-snap-stop: always;            /* une swipe = une étape, jamais trois d'un coup */
@@ -135,34 +137,51 @@
 /* flèches de défilement des tuiles */
 .fleche {
     display: none;
-    position: absolute;
     translate: 0 -50%;
-    transform: translateY(-50%);
-    top: 25%;
-    width: 48px;
-    height: 48px;
+    transform: translateY(50%);
+    top: 0%;
+    width: clamp(3.5rem, 5vw, 4.5rem);;
+    height: clamp(3.5rem, 5vw, 4.5rem);;
     border: 2px solid #000;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
-    font-size: 1.4rem;
+    font-size: clamp(3.5rem, 5vw, 4.5rem);
     cursor: pointer;
-    z-index: 600;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.fleche--g   {
-    left: 0;
+.fleche:hover {
+    background: #2c3e50;            /* fond gris au survol */
+    color: white;
 }
-.fleche--d   {
-    right: 0;
+.cadre {
+    font-size: clamp(2rem, 3vw, 4.5rem);
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.conteneur.cuisine .fleche { display: block; }
+.titre-rec {
+    border: none;
+    margin: 0px;
+}
+.poub {
+    margin: 0px;
+}
+.conteneur.cuisine .fleche { display: inline-flex; }
 
 /* compteur du numéro d'étape si tuiles affichées */
 .cptetapes {
-    position: relative;
     display: none;
     text-align: center;
     margin: 12px 0;
     font-size: clamp(1.4rem, 1.5vw, 2.5rem);
     font-weight: bold;
+    background:  #2c3e50;
+    color:rgba(255, 255, 255, 0.87);
+    border: 2px solid #000;
+    border-radius: 20px;
 }
 .conteneur.cuisine .cptetapes { display: block; }
