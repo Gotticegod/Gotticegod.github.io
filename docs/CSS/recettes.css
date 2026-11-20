@@ -107,6 +107,7 @@
     scroll-snap-type: x mandatory;       /* s'arrête toujours sur une tuile */
     overscroll-behavior-x: contain;      /* le balayage ne déclenche plus le balayage "retour" du navigateur */
     scrollbar-width: none;               /* pas d'ascenseur horizontal */
+    scroll-behavior: smooth;
 }
 .conteneur.cuisine .etape { /* étapes des recettes */
     flex: 0 0 95%;                       /* 86 % : la tuile suivante dépasse, ça invite à swiper */
@@ -136,7 +137,7 @@
 
 /* flèches de défilement des tuiles */
 .fleche {
-    display: none;
+    display: inline-flex;
     translate: 0 -50%;
     transform: translateY(50%);
     top: 0%;
@@ -144,30 +145,27 @@
     height: clamp(3.5rem, 5vw, 4.5rem);;
     border: 2px solid #000;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    font-size: clamp(3.5rem, 5vw, 4.5rem);
+    background: #e74c3c;
+    /*font-size: clamp(3.5rem, 5vw, 4.5rem);*/
+    font-size: 0;
+    line-height: 0;
     cursor: pointer;
     align-items: center;
-
     justify-content: center;
     padding: 0;
-    color: inherit; 
+    color: #e74c3c; 
 }
 .fleche::before {
     content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
+    width: 0.7em;
+    height: 0.7em;
+    background: #e74c3c;
 }
 .fleche.fleche--d{
-    border-width: 0.4em 0 0.4em 0.7em;
-    border-color: transparent transparent transparent currentColor;
-    margin-left: 0.08em;   /* compense le poids visuel à droite */
+    clip-path: polygon(15% 0%, 100% 50%, 15% 100%);
 }
 .fleche.fleche--g{
-    border-width: 0.4em 0.7em 0.4em 0;
-    border-color: transparent currentColor transparent transparent;
-    margin-left: 0.08em;   /* compense le poids visuel à droite */
+    clip-path: polygon(85% 0%, 0% 50%, 85% 100%);
 }
 .fleche:hover {
     background: #2c3e50;            /* fond gris au survol */
