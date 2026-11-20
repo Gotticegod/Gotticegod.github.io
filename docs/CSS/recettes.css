@@ -137,7 +137,7 @@
 
 /* flèches de défilement des tuiles */
 .fleche {
-    display: inline-flex;
+    display: none;
     translate: 0 -50%;
     transform: translateY(50%);
     top: 0%;
