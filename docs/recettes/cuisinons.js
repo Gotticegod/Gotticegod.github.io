@@ -51,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const auDebut = piste.scrollLeft < 20;
         const auFin   = (piste.scrollWidth - piste.scrollLeft - piste.clientWidth) < 10;
         flecheG.style.visibility = auDebut ? "hidden" : "visible";
-        flecheG.textContent = auDebut ? "⏴" : "⏴";
         flecheD.style.visibility = auFin   ? "hidden" : "visible";
-        flecheD.textContent = auDebut ? "⏵" : "⏵";
     }
     // ATTENTE DU SCROLL DE LA TUILE + DRAPEAU POUR EVITER LES REPETITIONS
     let enAttente = false;
