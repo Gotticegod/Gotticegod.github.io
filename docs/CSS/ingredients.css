@@ -104,12 +104,31 @@
 }
 .bp-replier {
     display: block;
-    margin: 8px auto 0;
-    background: none;
-    border: none;
+    position: absolute;
+    left: 35%;
+    align-items: center;         /* centrage vertical */
+    justify-content: center;
+    font: inherit;               /* le bouton hérite de la police */
+    font-size: clamp(0.75rem, 6cqi, 5rem);
+    appearance: none;            /* vire l'habillage natif du bouton */
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    /* Le style en lui-même */
+    height: fit-content;
+    width: fit-content;
+    padding-inline: 5px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #e74c3c;
+    background-color: #fff;
     cursor: pointer;
-    font-size: 0.85rem;
-    color: inherit;
+    white-space: pre-line;   /* préserve les \n, collapse les espaces multiples */
+}
+.bp-replier:hover {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: #fff;
 }
 /* ============================================================*/
 /* =============       IMAGES INGREDIENTS         =============*/
