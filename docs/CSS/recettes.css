@@ -76,7 +76,7 @@
     transform: translateX(4px);
 }
 .etapes p {
-    font-size: clamp(1.5rem, 1.8vw, 2rem);
+    font-size: clamp(1.3rem, 1.8vw, 2rem);
     font-style: normal;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -85,6 +85,7 @@
     list-style-type: none;
     color: #ffffff;
     margin-bottom: clamp(100px, 2vw, 200px);
+    padding-inline-start: 5px;
 }
 
 /* ============================================================*/
@@ -94,6 +95,9 @@
 
 /* aucune règle ne s'appplique tant que body n'a pas la classe .cuisine */
 
+body.page-recettes {
+    touch-action: pan-y;        /* bloque les gestes horizontaux */
+}
 .conteneur.cuisine .etapes { /* liste des étapes */
     display: flex;
     flex-wrap: nowrap;          /* interdit explicitement l'empilement */
@@ -103,9 +107,8 @@
     height: 62vh; /* Une piste d'une seule tuile de haut */
     min-height: 320px;
     align-items: stretch;
-    overflow-x: auto;                    /* conteneur défilant */
-    scroll-snap-type: x mandatory;       /* s'arrête toujours sur une tuile */
-    overscroll-behavior-x: contain;      /* le balayage ne déclenche plus le balayage "retour" du navigateur */
+    overflow-x: hidden;                    /* conteneur défilant */
+    scroll-snap-type: none;       /* s'arrête toujours sur une tuile */
     scrollbar-width: none;               /* pas d'ascenseur horizontal */
     scroll-behavior: smooth;
 }

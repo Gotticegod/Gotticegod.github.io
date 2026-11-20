@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         bouton.setAttribute("aria-pressed", actif);
         bouton.textContent = actif ? "■\nStopper" : "▶\nLancer";
         document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+        repli();
         if (actif) maj();
     });
 
@@ -64,3 +65,26 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", maj);
     maj();
 });
+
+// ============================================================//
+// =============    REPLIER LISTE INGREDIENTS     =============//
+// ============================================================//
+const bouton = document.querySelector(".bp-replier");
+bouton.addEventListener("click", () => {
+    bprepli()
+});
+
+function bprepli() {
+    const bouton = document.querySelector(".bp-replier");
+    const liste = document.querySelector(".liste-ingredients");
+    const replie = liste.classList.toggle("replier");
+    bouton.textContent = replie ? "Déplier la liste" : "Replier la liste";
+    bouton.setAttribute("aria-expanded", !replie);
+}
+function repli() {
+    const bouton = document.querySelector(".bp-replier");
+    const liste = document.querySelector(".liste-ingredients");
+    const replie = liste.classList.add("replier");
+    bouton.textContent = replie ? "Déplier la liste" : "Replier la liste";
+    bouton.setAttribute("aria-expanded", !replie);
+}

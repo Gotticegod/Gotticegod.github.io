@@ -94,7 +94,23 @@
     color: #e74c3c;
     font-size: clamp(1.4rem, 2vw, 2rem);
 }
-
+.liste-ingredients {
+    max-height: 1500px;           /* valeur > hauteur réelle du contenu */
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.liste-ingredients.replier {
+    max-height: 0;
+}
+.bp-replier {
+    display: block;
+    margin: 8px auto 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: inherit;
+}
 /* ============================================================*/
 /* =============       IMAGES INGREDIENTS         =============*/
 /* ============================================================*/

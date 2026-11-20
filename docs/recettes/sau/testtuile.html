@@ -13,10 +13,61 @@
 
 <script src="/recettes/NbPersonnes.js" defer></script>
 <script src="/recettes/cuisinons.js" defer></script>
+<script src="/recettes/defiltuiles.js" defer></script>
 
-<body>
+
+<body class="page-recettes">
  <div class="conteneur">
-        <main>
+    <!-- ******************* Ingrédients ******************* -->
+
+        <nav class="somm ingredients">
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+            <div id="ingr1" data-poids="20"></div>
+            <div id="ingr2" data-poids="13"></div>
+            <div id="ingr3" data-poids="12.5"></div>
+            <div id="ingr4" data-poids="0.1"></div>
+            <div id="ingr5" data-poids="0.05"></div>
+            <div id="ingr6" data-poids="0.1"></div>
+            <div id="ingr7" data-poids="0.1"></div>
+            <div id="ingr8" data-poids="0.1"></div>
+            <div id="ingr9" data-poids="0"></div>
+            <div id="ingr10" data-poids="0"></div>
+            <div id="ingr11" data-poids="0"></div>
+            <div id="ingr12" data-poids="0"></div>
+            <div id="ingr13" data-poids="0"></div>
+            <div id="ingr14" data-poids="0"></div>
+            <div id="ingr15" data-poids="0"></div>
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+            <h2>Ingrédients</h2>
+            <div class="barre-bp">
+                <div class="bp-g">
+                    <a href="/recettes/sauce.html" class="bpgauche">&#10008<br>Retour</a>
+                </div>
+                <div class="cptnbpers">
+                    <button onclick="CalcPers(-1)">-</button>
+                    <span id="nbPersonnes">6</span>
+                    <button onclick="CalcPers(1)">+</button>
+                </div>
+                <div class="bp-d">
+                    <button type="button" class="bpdroit" id="bpCuisine" aria-pressed="false">&#9658<br>Lancer</button>
+                </div>
+            </div>
+            <h2>Personnes</h2>
+                <div class="liste-ingredients">
+                    <summary><img src="/recettes/ingr/farine.png" alt="Farine" loading="lazy"><span id="totingr1">120</span>g - Farine</summary>
+                    <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr2">78</span>g - Sucre</summary>
+                    <summary><img src="/recettes/ingr/beurresale.png" alt="beurre salé" loading="lazy"><span id="totingr3">75</span>g - Beurre salé</summary>
+                    <summary><img src="/recettes/ingr/sucrevanille.png" alt="Sucre vanillé" loading="lazy"><span id="totingr4">0.6</span> sachet - Sucre vanillé</summary>
+                    <summary><img src="/recettes/ingr/levurechimique.png" alt="levure chimique" loading="lazy"><span id="totingr5">0.3</span> sachet - Levure chimique</summary>
+                    <summary><img src="/recettes/ingr/Oeuf.png" alt="oeuf" loading="lazy"><span id="totingr6">0.6</span> - Oeuf</summary>
+                    <summary><img src="/recettes/ingr/Oeuf.png" alt="jauneoeuf" loading="lazy"><span id="totingr7">0.6</span> jaune - Oeuf</summary>
+                    <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr8">0.6</span> pincée - Sel</summary>
+                </div>
+                <button type="button" class="bp-replier" aria-expanded="true">Replier la liste</button>
+        </nav>
+        <!-- ******************* Ingrédients ******************* -->
+    
+    <main>
             <div class="cadre">
                 <p class="poub"></p>
                 <button type="button" class="fleche fleche--g" id="flecheG" aria-label="Étape précédente"></button>
@@ -71,53 +122,7 @@
         </main>
 
         
-        <!-- ******************* Ingrédients ******************* -->
-
-        <nav class="somm ingredients">
-            <!-- ******* valeurs initiales pour 1 personne ******* -->
-            <div id="ingr1" data-poids="20"></div>
-            <div id="ingr2" data-poids="13"></div>
-            <div id="ingr3" data-poids="12.5"></div>
-            <div id="ingr4" data-poids="0.1"></div>
-            <div id="ingr5" data-poids="0.05"></div>
-            <div id="ingr6" data-poids="0.1"></div>
-            <div id="ingr7" data-poids="0.1"></div>
-            <div id="ingr8" data-poids="0.1"></div>
-            <div id="ingr9" data-poids="0"></div>
-            <div id="ingr10" data-poids="0"></div>
-            <div id="ingr11" data-poids="0"></div>
-            <div id="ingr12" data-poids="0"></div>
-            <div id="ingr13" data-poids="0"></div>
-            <div id="ingr14" data-poids="0"></div>
-            <div id="ingr15" data-poids="0"></div>
-            <!-- ******* valeurs initiales pour 1 personne ******* -->
-            <h2>Ingrédients</h2>
-            <div class="barre-bp">
-                <div class="bp-g">
-                    <a href="/recettes/sauce.html" class="bpgauche">&#10008<br>Retour</a>
-                </div>
-                <div class="cptnbpers">
-                    <button onclick="CalcPers(-1)">-</button>
-                    <span id="nbPersonnes">6</span>
-                    <button onclick="CalcPers(1)">+</button>
-                </div>
-                <div class="bp-d">
-                    <button type="button" class="bpdroit" id="bpCuisine" aria-pressed="false">&#9658<br>Lancer</button>
-                </div>
-            </div>
-            <h2>Personnes</h2>
-                <summary><img src="/recettes/ingr/farine.png" alt="Farine" loading="lazy"><span id="totingr1">120</span>g - Farine</summary>
-                <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr2">78</span>g - Sucre</summary>
-                <summary><img src="/recettes/ingr/beurresale.png" alt="beurre salé" loading="lazy"><span id="totingr3">75</span>g - Beurre salé</summary>
-                <summary><img src="/recettes/ingr/sucrevanille.png" alt="Sucre vanillé" loading="lazy"><span id="totingr4">0.6</span> sachet - Sucre vanillé</summary>
-                <summary><img src="/recettes/ingr/levurechimique.png" alt="levure chimique" loading="lazy"><span id="totingr5">0.3</span> sachet - Levure chimique</summary>
-                <summary><img src="/recettes/ingr/Oeuf.png" alt="oeuf" loading="lazy"><span id="totingr6">0.6</span> - Oeuf</summary>
-                <summary><img src="/recettes/ingr/Oeuf.png" alt="jauneoeuf" loading="lazy"><span id="totingr7">0.6</span> jaune - Oeuf</summary>
-                <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr8">0.6</span> pincée - Sel</summary>
-                
-        </nav>
-        <!-- ******************* Ingrédients ******************* -->
-
+        
     </div>
 </body>    
 </html>
