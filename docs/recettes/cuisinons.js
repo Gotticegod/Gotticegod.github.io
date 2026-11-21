@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const flecheD  = document.getElementById("flecheD");
     const total    = piste.children.length;
     const tuiles   = Array.from(piste.children);
+    let scrollencours=false;   
 
     function indexVisible() { // RECHERCHE TUILE LA + PROCHE EN POSITION
         let meilleur   = 0;          // index de la tuile retenue
@@ -32,16 +33,29 @@ document.addEventListener("DOMContentLoaded", function () {
         bouton.setAttribute("aria-pressed", actif);
         bouton.textContent = actif ? "■\nStopper" : "▶\nLancer";
         document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-        repli();
+        const etatrepli = document.querySelector(".liste-ingredients").classList.contains("replier")
+        if (actif) {
+            bprepli(false)
+        } else {
+            bprepli(true)
+        }
         if (actif) maj();
     });
-
+    
+    
     // GESTION DES FLECHES DE DEFILEMENT DES TUILES
     function versCote(cote) {
-        piste.scrollBy({ left: cote * piste.clientWidth, behavior: "smooth" });
+        const tuileactuelle = indexVisible();
+        const tuilecible = tuileactuelle + cote;
+        piste.scrollBy({ left: cote * tuiles[tuilecible].clientWidth + 4, behavior: "smooth" });
     }
-    flecheG.addEventListener("click", function () { versCote(-1); });
-    flecheD.addEventListener("click", function () { versCote( 1); });
+    piste.addEventListener("scroll", function () { scrollencours=true});
+    piste.addEventListener("scrollend", function () { scrollencours=false});
+
+    if (!scrollencours) {
+        flecheG.addEventListener("click", function () { versCote(-1); });
+        flecheD.addEventListener("click", function () { versCote( 1); });
+    }
 
     // COMPTEUR DU NUMERO D'ETAPES
     function maj() {
@@ -63,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { passive: true });
 
     window.addEventListener("resize", maj);
-    maj();
+    maj();   
 });
 
 // ============================================================//
@@ -71,20 +85,26 @@ document.addEventListener("DOMContentLoaded", function () {
 // ============================================================//
 const bouton = document.querySelector(".bp-replier");
 bouton.addEventListener("click", () => {
-    bprepli()
+    const etatrepli = document.querySelector(".liste-ingredients").classList.contains("replier")
+    if (etatrepli) {
+        bprepli(true)
+    } else {
+        bprepli(false)
+    }
 });
 
-function bprepli() {
+function bprepli(repli) {
     const bouton = document.querySelector(".bp-replier");
     const liste = document.querySelector(".liste-ingredients");
-    const replie = liste.classList.toggle("replier");
-    bouton.textContent = replie ? "Déplier la liste" : "Replier la liste";
-    bouton.setAttribute("aria-expanded", !replie);
-}
-function repli() {
-    const bouton = document.querySelector(".bp-replier");
-    const liste = document.querySelector(".liste-ingredients");
-    const replie = liste.classList.add("replier");
-    bouton.textContent = replie ? "Déplier la liste" : "Replier la liste";
-    bouton.setAttribute("aria-expanded", !replie);
+    if (repli) {
+        const deplie = liste.classList.remove("replier");
+        console.log("ajout classe replier",deplie)
+        bouton.textContent = "Replier la liste";
+        bouton.setAttribute("aria-expanded", true);
+    } else {
+        const replie = liste.classList.add("replier");
+        console.log("ajout classe replier",replie)
+        bouton.textContent = "Déplier la liste"
+        bouton.setAttribute("aria-expanded", false);
+    }
 }

@@ -104,7 +104,7 @@ body.page-recettes {
     gap: 0px;
     margin: 0;
     padding: 0 16px 16px;
-    height: 62vh; /* Une piste d'une seule tuile de haut */
+    height: 100vh; /* Une piste d'une seule tuile de haut */
     min-height: 320px;
     align-items: stretch;
     overflow-x: hidden;                    /* conteneur défilant */
@@ -113,7 +113,7 @@ body.page-recettes {
     scroll-behavior: smooth;
 }
 .conteneur.cuisine .etape { /* étapes des recettes */
-    flex: 0 0 95%;                       /* 86 % : la tuile suivante dépasse, ça invite à swiper */
+    flex: 0 0 95%;                       /* 95 % : la tuile suivante dépasse, ça invite à swiper */
     overflow-y: auto;                    /* si le texte d'une étape dépasse la tuile */
     scroll-snap-align: start;
     scroll-snap-stop: always;            /* une swipe = une étape, jamais trois d'un coup */
@@ -123,7 +123,7 @@ body.page-recettes {
     color: #2c3e50;
     border: 2px solid #000;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .conteneur.cuisine .etape h2 { margin-top: 0; }
