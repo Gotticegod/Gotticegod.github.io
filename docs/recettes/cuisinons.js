@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const actif = document.querySelector(".conteneur").classList.toggle("cuisine");
         bouton.setAttribute("aria-pressed", actif);
         bouton.textContent = actif ? "■\nStopper" : "▶\nLancer";
-        document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
         const etatrepli = document.querySelector(".liste-ingredients").classList.contains("replier")
         if (actif) {
             bprepli(false)
@@ -42,20 +41,37 @@ document.addEventListener("DOMContentLoaded", function () {
         if (actif) maj();
     });
     
-    
+    const listeingr = document.querySelector(".liste-ingredients");
+    listeingr.addEventListener("transitionend", (e) => {
+        if (e.propertyName === "max-height" && listeingr.classList.contains("replier")) {
+            // La liste est complètement repliée (hauteur = 0)
+            document.querySelector(".cadre").scrollIntoView({ behavior: "smooth" });
+        }
+    });
+
     // GESTION DES FLECHES DE DEFILEMENT DES TUILES
     function versCote(cote) {
         const tuileactuelle = indexVisible();
         const tuilecible = tuileactuelle + cote;
-        piste.scrollBy({ left: cote * tuiles[tuilecible].clientWidth + 4, behavior: "smooth" });
+        console.log("décalage de : ", (cote * (tuiles[tuilecible].clientWidth + 4)))
+        piste.scrollBy({ left: cote * (tuiles[tuilecible].clientWidth + 4), behavior: "smooth" });
     }
-    piste.addEventListener("scroll", function () { scrollencours=true});
-    piste.addEventListener("scrollend", function () { scrollencours=false});
+    
 
-    if (!scrollencours) {
-        flecheG.addEventListener("click", function () { versCote(-1); });
-        flecheD.addEventListener("click", function () { versCote( 1); });
-    }
+    let flechegactive = false;
+    let flechedactive = false;
+    flecheG.addEventListener("click", function () {
+        if (flechegactive) return;
+        flechegactive = true;
+        versCote(-1);
+        piste.addEventListener("scrollend", function () { flechegactive=false});
+    });
+    flecheD.addEventListener("click", function () { 
+        if (flechedactive) return;
+        flechedactive = true;
+        versCote(1);
+        piste.addEventListener("scrollend", function () { flechedactive=false});
+    });
 
     // COMPTEUR DU NUMERO D'ETAPES
     function maj() {

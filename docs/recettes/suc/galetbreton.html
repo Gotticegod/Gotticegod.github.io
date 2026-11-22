@@ -12,37 +12,13 @@
 </head>
 
 <script src="/recettes/NbPersonnes.js" defer></script>
+<script src="/recettes/cuisinons.js" defer></script>
+<script src="/recettes/defiltuiles.js" defer></script>
 
-<body>
+
+<body class="page-recettes">
  <div class="conteneur">
-        <main>
-            <div class="etapes">
-                <h1>Galets Bretons au beurre salé :</h1>
-                    <h2>Etape 1 :</h2>
-                        <p>- Préchauffer le four thermostat 8</p>
-                        <p>- Découper le beurre en petits morceaux et laisser ramollir</p>
-                    <h2>Etape 2 :</h2>
-                        <p>- Dans un saladier, mélanger la farine, le sucre, le sucre vanillé, le sel et la levure</p>
-                        <p>- Ajouter les morceaux de beurre ramollis et mélanger jusqu'à obtenir une pate sableuse</p>
-                    <h2>Etape 3 :</h2>
-                        <p>- Ajouter l'oeuf et pétrir à la main pour former une boule</p>
-                        <p>- La boule oit être très élastique et très compacte</p>
-                    <h2>Etape 4 :</h2>
-                        <p>- Laisser reposer la boule pendant 1h au frigo</p>
-                    <h2>Etape 5 :</h2>
-                        <p>- Fariner le plan de travail et étaler la boule dessus avec un rouleau à patisserie</p>
-                        <p>- Une fois bien étalée, découper des ronds dans la pâte avec un emporte-pièce</p>
-                    <h2>Etape 6 :</h2>
-                        <p>- Déposer les ronds sur une feuille de papier sulfurisée</p>
-                        <p>- Décorer la surface avec un couteau, et étaler le jaune d'oeuf (dilué dans 5cl d'eau) dessus au pinceau</p>
-                    <h2>Etape 7 :</h2>
-                        <p>- Enfourner mi-hauteur pour 10min. Les galets doivent être dorés</p>
-            </div>  
-            <a href="/recettes/sucre.html" class="bpnavig">&#8617 Retour</a>
-        </main>
-
-        
-        <!-- ******************* Ingrédients ******************* -->
+    <!-- ******************* Ingrédients ******************* -->
 
         <nav class="somm ingredients">
             <!-- ******* valeurs initiales pour 1 personne ******* -->
@@ -62,26 +38,95 @@
             <div id="ingr14" data-poids="0"></div>
             <div id="ingr15" data-poids="0"></div>
             <!-- ******* valeurs initiales pour 1 personne ******* -->
-
             <h2>Ingrédients</h2>
-            <div class="cptnbpers">
-                <button onclick="CalcPers(-1)">-</button>
-                <span id="nbPersonnes">6</span>
-                <button onclick="CalcPers(1)">+</button>
+            <div class="barre-bp">
+                <div class="bp-g">
+                    <a href="/recettes/sucre.html" class="bpgauche">&#10008<br>Retour</a>
+                </div>
+                <div class="cptnbpers">
+                    <button onclick="CalcPers(-1)">-</button>
+                    <span id="nbPersonnes">6</span>
+                    <button onclick="CalcPers(1)">+</button>
+                </div>
+                <div class="bp-d">
+                    <button type="button" class="bpdroit" id="bpCuisine" aria-pressed="false">&#9658<br>Lancer</button>
+                </div>
             </div>
             <h2>Personnes</h2>
-                <summary><img src="/recettes/ingr/farine.png" alt="Farine" loading="lazy"><span id="totingr1">120</span>g - Farine</summary>
-                <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr2">78</span>g - Sucre</summary>
-                <summary><img src="/recettes/ingr/beurresale.png" alt="beurre salé" loading="lazy"><span id="totingr3">75</span>g - Beurre salé</summary>
-                <summary><img src="/recettes/ingr/sucrevanille.png" alt="Sucre vanillé" loading="lazy"><span id="totingr4">0.6</span> sachet - Sucre vanillé</summary>
-                <summary><img src="/recettes/ingr/levurechimique.png" alt="levure chimique" loading="lazy"><span id="totingr5">0.3</span> sachet - Levure chimique</summary>
-                <summary><img src="/recettes/ingr/Oeuf.png" alt="oeuf" loading="lazy"><span id="totingr6">0.6</span> - Oeuf</summary>
-                <summary><img src="/recettes/ingr/Oeuf.png" alt="jauneoeuf" loading="lazy"><span id="totingr7">0.6</span> jaune - Oeuf</summary>
-                <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr8">0.6</span> pincée - Sel</summary>
-                
+                <div class="liste-ingredients">
+                    <summary><img src="/recettes/ingr/farine.png" alt="Farine" loading="lazy"><span id="totingr1">120</span>g - Farine</summary>
+                    <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr2">78</span>g - Sucre</summary>
+                    <summary><img src="/recettes/ingr/beurresale.png" alt="beurre salé" loading="lazy"><span id="totingr3">75</span>g - Beurre salé</summary>
+                    <summary><img src="/recettes/ingr/sucrevanille.png" alt="Sucre vanillé" loading="lazy"><span id="totingr4">0.6</span> sachet - Sucre vanillé</summary>
+                    <summary><img src="/recettes/ingr/levurechimique.png" alt="levure chimique" loading="lazy"><span id="totingr5">0.3</span> sachet - Levure chimique</summary>
+                    <summary><img src="/recettes/ingr/Oeuf.png" alt="oeuf" loading="lazy"><span id="totingr6">0.6</span> - Oeuf</summary>
+                    <summary><img src="/recettes/ingr/Oeuf.png" alt="jauneoeuf" loading="lazy"><span id="totingr7">0.6</span> jaune - Oeuf</summary>
+                    <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr8">0.6</span> pincée - Sel</summary>
+                </div>
+                <button type="button" class="bp-replier" aria-expanded="true">Replier la liste</button>
         </nav>
         <!-- ******************* Ingrédients ******************* -->
+    
+    <main>
+            <div class="cadre">
+                <p class="poub"></p>
+                <button type="button" class="fleche fleche--g" id="flecheG" aria-label="Étape précédente"></button>
+                <h1 class="titre-rec"> Galets Bretons au beurre salé :</h1>
+                <button type="button" class="fleche fleche--d" id="flecheD" aria-label="Étape suivante"></button>
+                <p class="poub"></p>
+            </div>
+                        
+            <p class="cptetapes" id="cptetapes" aria-live="polite"></p>            
+            <ol class="etapes" id="etapes">
+                    <li class="etape"> 
+                    <h2>Etape 1 :</h2>
+                        <p>- Préchauffer le four thermostat 8</p>
+                        <p>- Découper le beurre en petits morceaux et laisser ramollir</p>
+                        <p class="detail"><span id="totingrd3">75</span>g - Beurre salé</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 2 :</h2>
+                        <p>- Dans un saladier, mélanger la farine, le sucre, le sucre vanillé, le sel et la levure</p>
+                        <p>- Ajouter les morceaux de beurre ramollis et mélanger jusqu'à obtenir une pate sableuse</p>
+                        <p class="detail"><span id="totingrd1">120</span>g - Farine</p>
+                        <p class="detail"><span id="totingrd2">78</span>g - Sucre</p>
+                        <p class="detail"><span id="totingrd4">0.6</span> sachet - Sucre vanillé</p>
+                        <p class="detail"><span id="totingrd8">0.6</span> pincée - Sel</p>
+                        <p class="detail"><span id="totingrd5">0.3</span> sachet - Levure chimique</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 3 :</h2>
+                        <p>- Ajouter l'oeuf et pétrir à la main pour former une boule</p>
+                        <p>- La boule doit être très élastique et très compacte</p>
+                        <p class="detail"><span id="totingrd6">0.6</span> - Oeuf</p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 4 :</h2>
+                        <p>- Laisser reposer la boule pendant 1h au frigo</p>
+                        <p class="detail"></p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 5 :</h2>
+                        <p>- Fariner le plan de travail et étaler la boule dessus avec un rouleau à patisserie</p>
+                        <p>- Une fois bien étalée, découper des ronds dans la pâte avec un emporte-pièce</p>
+                        <p class="detail"></p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 6 :</h2>
+                        <p>- Déposer les ronds sur une feuille de papier sulfurisée</p>
+                        <p>- Décorer la surface avec un couteau, et étaler le jaune d'oeuf (dilué dans 5cl d'eau) dessus au pinceau</p>
+                        <p class="detail"><span id="totingrd7">0.6</span> jaune - Oeuf</p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 7 :</h2>
+                        <p>- Enfourner mi-hauteur pour 10min. Les galets doivent être dorés</p>
+                        <p class="detail"></p>
+                    </li>
+            </ol>  
+        </main>
 
+        
+        
     </div>
 </body>    
 </html>

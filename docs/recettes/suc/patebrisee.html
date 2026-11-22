@@ -12,26 +12,15 @@
 </head>
 
 <script src="/recettes/NbPates.js" defer></script>
+<script src="/recettes/cuisinons.js" defer></script>
+<script src="/recettes/defiltuiles.js" defer></script>
 
-<body>
+
+<body class="page-recettes">
  <div class="conteneur">
-        <main>
-            <div class="etapes">
-                <h1>Pâte brisée :</h1>
-                    <h2>Etape 1 :</h2>
-                        <p>- Mélanger la farine, le sel et le sucre dans un saladier</p>
-                    <h2>Etape 2 :</h2>
-                        <p>- Ajouter le beurre et sabler fin (frotter entre les doigts)</p>
-                    <h2>Etape 3 :</h2>
-                        <p>- Ajouter l'eau</p>
-                        <p>- Travailler la pâte jusqu'à obtenir une boule</p>
-            </div>
-            <a href="/recettes/sucre.html" class="bpnavig">&#8617 Retour</a>
-        </main>
-
-        
-        <!-- ******************* Ingrédients ******************* -->
-         <nav class="somm ingredients">
+    <!-- ******************* Ingrédients ******************* -->
+         
+        <nav class="somm ingredients">
             <!-- ******* valeurs initiales pour 1 personne ******* -->
             <div id="ingr1" data-poids="80"></div>
             <div id="ingr2" data-poids="150"></div>
@@ -49,21 +38,66 @@
             <div id="ingr14" data-poids="0"></div>
             <div id="ingr15" data-poids="0"></div>
             <!-- ******* valeurs initiales pour 1 personne ******* -->
-             
             <h2>Ingrédients</h2>
-            <div class="cptnbpers">
-                <button onclick="CalcPates(-1)">-</button>
-                <span id="nbPates">1</span>
-                <button onclick="CalcPates(1)">+</button>
+            <div class="barre-bp">
+                <div class="bp-g">
+                    <a href="/recettes/sucre.html" class="bpgauche">&#10008<br>Retour</a>
+                </div>
+                <div class="cptnbpers">
+                    <button onclick="CalcPates(-1)">-</button>
+                    <span id="nbPates">1</span>
+                    <button onclick="CalcPates(1)">+</button>
+                </div>
+                <div class="bp-d">
+                    <button type="button" class="bpdroit" id="bpCuisine" aria-pressed="false">&#9658<br>Lancer</button>
+                </div>
             </div>
-            <h2>Pâte brisée</h2>
-                <summary><img src="/recettes/ingr/eau.png" alt="eau" loading="lazy"><span id="totingr1">80</span>g - Eau tiède</summary>
-                <summary><img src="/recettes/ingr/beurresale.png" alt="beurresale" loading="lazy"><span id="totingr2">150</span>g - <span class="tip" data-tip="Beurre ramolli à température mais pas fondu !">Beurre en dés en pommade</span></summary>
-                <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr3">3</span>C à S - Sucre</summary>
-                <summary><img src="/recettes/ingr/farine.png" alt="farine" loading="lazy"><span id="totingr4">300</span>g - Farine</summary>
-                <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr5">0.5</span> C à C - Sel</summary>
+            <h2>Pâtes</h2>
+                <div class="liste-ingredients">
+                    <summary><img src="/recettes/ingr/eau.png" alt="eau" loading="lazy"><span id="totingr1">80</span>g - Eau tiède</summary>
+                    <summary><img src="/recettes/ingr/beurresale.png" alt="beurresale" loading="lazy"><span id="totingr2">150</span>g - <span class="tip" data-tip="Beurre ramolli à température mais pas fondu !">Beurre en dés en pommade</span></summary>
+                    <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr3">3</span>C à S - Sucre</summary>
+                    <summary><img src="/recettes/ingr/farine.png" alt="farine" loading="lazy"><span id="totingr4">300</span>g - Farine</summary>
+                    <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr5">0.5</span> C à C - Sel</summary>
+                </div>
+                <button type="button" class="bp-replier" aria-expanded="true">Replier la liste</button>
         </nav>
         <!-- ******************* Ingrédients ******************* -->
+        <main>
+            <div class="cadre">
+                <p class="poub"></p>
+                <button type="button" class="fleche fleche--g" id="flecheG" aria-label="Étape précédente"></button>
+                <h1 class="titre-rec"> Pâte brisée :</h1>
+                <button type="button" class="fleche fleche--d" id="flecheD" aria-label="Étape suivante"></button>
+                <p class="poub"></p>
+            </div>
+                        
+            <p class="cptetapes" id="cptetapes" aria-live="polite"></p>            
+            <ol class="etapes" id="etapes">
+                    <li class="etape"> 
+                    <h2>Etape 1 :</h2>
+                        <p>- Mélanger la farine, le sel et le sucre dans un saladier</p>
+                        <p class="detail"><span id="totingrd4">300</span>g - Farine</p>
+                        <p class="detail"><span id="totingrd5">0.5</span> C à C - Sel</p>
+                        <p class="detail"><span id="totingrd3">3</span>C à S - Sucre</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 2 :</h2>
+                        <p>- Ajouter le beurre et sabler fin (frotter entre les doigts)</p>
+                        <p class="detail"><span id="totingrd2">150</span>g - Beurre en dés en pommade</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 3 :</h2>
+                        <p>- Ajouter l'eau</p>
+                        <p>- Travailler la pâte jusqu'à obtenir une boule</p>
+                        <p class="detail"><span id="totingrd1">80</span>g - Eau tiède</p>
+                    </li>
+            </ol>  
+            
+        </main>
+
+        
+        
     </div>
 </body>    
 </html>

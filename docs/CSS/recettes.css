@@ -124,6 +124,7 @@ body.page-recettes {
     border: 2px solid #000;
     border-radius: 20px;
     padding: 10px;
+    touch-action: pan-y;
 }
 
 .conteneur.cuisine .etape h2 { margin-top: 0; }
