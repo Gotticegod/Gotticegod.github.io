@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="/CSS/general.css">
+    <link rel="stylesheet" href="/CSS/sommaire.css">
+    <link rel="stylesheet" href="/CSS/ingredients.css">
+    <link rel="stylesheet" href="/CSS/recettes.css">
+    <link rel="stylesheet" href="/CSS/mobile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gâteau au chocolat coeur fondant</title>
+</head>
+
+<script src="/recettes/NbPersonnes.js" defer></script>
+<script src="/recettes/cuisinons.js" defer></script>
+<script src="/recettes/defiltuiles.js" defer></script>
+
+<body class="page-recettes">
+ <div class="conteneur">
+    <!-- ******************* Ingrédients ******************* -->
+        <nav class="somm ingredients">
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+            <div id="ingr1" data-poids="25"></div>
+            <div id="ingr2" data-poids="33.33"></div>
+            <div id="ingr3" data-poids="16.66"></div>
+            <div id="ingr4" data-poids="0.66"></div>
+            <div id="ingr5" data-poids="33.33"></div>
+            <div id="ingr6" data-poids="0"></div>
+            <div id="ingr7" data-poids="0"></div>
+            <div id="ingr8" data-poids="0"></div>
+            <div id="ingr9" data-poids="0"></div>
+            <div id="ingr10" data-poids="0"></div>
+            <div id="ingr11" data-poids="0"></div>
+            <div id="ingr12" data-poids="0"></div>
+            <div id="ingr13" data-poids="0"></div>
+            <div id="ingr14" data-poids="0"></div>
+            <div id="ingr15" data-poids="0"></div>
+            <!-- ******* valeurs initiales pour 1 personne ******* -->
+            <h2>Ingrédients</h2>
+             <div class="barre-bp">
+                <div class="bp-g">
+                    <a href="/recettes/sucre.html" class="bpgauche">&#10008<br>Retour</a>
+                </div>
+                <div class="cptnbpers">
+                    <button onclick="CalcPers(-1)">-</button>
+                    <span id="nbPersonnes">6</span>
+                    <button onclick="CalcPers(1)">+</button>
+                </div>
+                <div class="bp-d">
+                    <button type="button" class="bpdroit" id="bpCuisine" aria-pressed="false">&#9658<br>Lancer</button>
+                </div>
+            </div>
+            <h2>Personnes</h2>
+                <div class="liste-ingredients">
+                    <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr1">150</span> g - Sucre</summary>
+                    <summary><img src="/recettes/ingr/beurresale.png" alt="beurre" loading="lazy"><span id="totingr2">200</span> g - Beurre</summary>
+                    <summary><img src="/recettes/ingr/farine.png" alt="farine" loading="lazy"><span id="totingr3">100</span> g - Farine</summary>
+                    <summary><img src="/recettes/ingr/Oeuf.png" alt="oeuf" loading="lazy"><span id="totingr4">4</span> - Oeufs</summary>
+                    <summary><img src="/recettes/ingr/chocolat.png" alt="chocolat" loading="lazy"><span id="totingr5">200</span> g - chocolat dessert 80%</summary>                
+                </div>
+                <button type="button" class="bp-replier" aria-expanded="true">Replier la liste</button>
+                <img class="photo-recette" src="/images/pasdephoto.png" alt="photo recette" loading="lazy">
+        </nav>
+        <!-- ******************* Ingrédients ******************* -->
+        <main>
+            <div class="cadre">
+                <p class="poub"></p>
+                <button type="button" class="fleche fleche--g" id="flecheG" aria-label="Étape précédente"></button>
+                <h1 class="titre-rec"> Gâteau au chocolat coeur fondant :</h1>
+                <button type="button" class="fleche fleche--d" id="flecheD" aria-label="Étape suivante"></button>
+                <p class="poub"></p>
+            </div>
+                        
+            <p class="cptetapes" id="cptetapes" aria-live="polite"></p>            
+            <ol class="etapes" id="etapes">
+                    <li class="etape"> 
+                    <h2>Etape 1 :</h2>
+                        <p>- Préchauffer le four à 180°C (thermostat 6)</p>
+                        <p>- Couper le beurre en morceaux, casser les carrés de chocolat</p>
+                        <p>- Mettre beurre & chocolat à fondre au micro-onde (puissance 300W-450W, pendant quelques minutes en ouvrant de temps en temps)</p>
+                        <p class="detail"><span id="totingrd2">200</span> g - Beurre</p>
+                        <p class="detail"><span id="totingrd5">200</span> g - chocolat dessert 80%</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 2 :</h2>
+                        <p>- Remuer au fouet pour bien homogénéiser le mélange</p>
+                        <p>- Ajouter le sucre et continuer avec le fouet</p>
+                        <p class="detail"><span id="totingrd1">150</span> g - Sucre</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 3 :</h2>
+                        <p>- Ajouter les oeufs 1 par 1 et bien mélanger à chaque ajout</p>
+                        <p class="detail"><span id="totingrd4">4</span> - Oeufs</p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 4 :</h2>
+                        <p>- Ajouter la farine et bien fouetter pour éviter les grumeaux</p>
+                        <p class="detail"><span id="totingrd3">100</span> g - Farine</p>
+                    </li>
+                    <li class="etape">
+                        <h2>Etape 5 :</h2>
+                        <p>- Enfourner pour 25 minutes : coeur fondant</p>
+                        <p>- Enfourner pour 30 minutes : coeur  pas fondant</p>
+                        <p class="detail">Le coeur fondant est beaucoup plus visible après un petit coup de micro-onde un fois le gâteau refroidi !</p>
+                    </li>
+            </ol>
+        </main>
+  
+    </div>
+</body>    
+</html>
