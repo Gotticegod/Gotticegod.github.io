@@ -12,28 +12,12 @@
 </head>
 
 <script src="/recettes/NbPersonnes.js" defer></script>
+<script src="/recettes/cuisinons.js" defer></script>
+<script src="/recettes/defiltuiles.js" defer></script>
 
-<body>
+<body class="page-recettes">
  <div class="conteneur">
-        <main>
-            <div class="etapes">
-                <h1>Flan de courgettes :</h1>
-                    <h2>Etape 1 :</h2>
-                        <p>- Eplucher & couper les courgettes</p>
-                        <p>- Les cuire à la vapeur</p>
-                    <h2>Etape 2 :</h2>
-                        <p>- Délayer la Maïzena dans le lait & ajouter la crème fraîche</p>
-                        <p>- Ajouter les oeufs battus, le jambon, le gruyère</p>
-                        <p>- Saler, poivrer et ajouter les courgettes</p>
-                    <h2>Etape 3 :</h2>
-                        <p>- Verser dans un plat à gratin beurré & fariné</p>
-                        <p>- Cuire au four pendant 30 minutes à 210°C</p>
-            </div>
-            <a href="/recettes/sale.html" class="bpnavig">&#8617 Retour</a>
-        </main>
-
-        
-        <!-- ******************* Ingrédients ******************* -->
+     <!-- ******************* Ingrédients ******************* -->
 
         <nav class="somm ingredients">
             <!-- ******* valeurs initiales pour 1 personne ******* -->
@@ -53,26 +37,72 @@
             <div id="ingr14" data-poids="0"></div>
             <div id="ingr15" data-poids="0"></div>
             <!-- ******* valeurs initiales pour 1 personne ******* -->
-
             <h2>Ingrédients</h2>
-            <div class="cptnbpers">
-                <button onclick="CalcPers(-1)">-</button>
-                <span id="nbPersonnes">6</span>
-                <button onclick="CalcPers(1)">+</button>
+            <div class="barre-bp">
+                <div class="bp-g">
+                    <a href="/recettes/sale.html" class="bpgauche">&#10008<br>Retour</a>
+                </div>
+                <div class="cptnbpers">
+                    <button onclick="CalcPers(-1)">-</button>
+                    <span id="nbPersonnes">6</span>
+                    <button onclick="CalcPers(1)">+</button>
+                </div>
+                <div class="bp-d">
+                    <button type="button" class="bpdroit" id="bpCuisine" aria-pressed="false">&#9658<br>Lancer</button>
+                </div>
             </div>
             <h2>Personnes</h2>
-
-                <summary><img src="/recettes/ingr/courgette.png" alt="Courgette" loading="lazy"><span id="totingr1">750</span>g - Courgettes</summary>
-                <summary><img src="/recettes/ingr/Oeuf.png" alt="Oeuf" loading="lazy"><span id="totingr2">6</span> - Oeufs</summary>
-                <summary><img src="/recettes/ingr/feculemais.png" alt="feculemais" loading="lazy"><span id="totingr3">3</span> C à S - Maïzena</summary>
-                <summary><img src="/recettes/ingr/Lait.png" alt="Lait" loading="lazy"><span id="totingr4">1.5</span> verre - Lait</summary>
-                <summary><img src="/recettes/ingr/cremefraiche.png" alt="cremefraiche" loading="lazy"><span id="totingr5">18</span> cl - Crème fraîche</summary>
-                <summary><img src="/recettes/ingr/gruyere.png" alt="gruyere" loading="lazy"><span id="totingr6">150</span>g - Gruyère râpé</summary>
-                <summary><img src="/recettes/ingr/jambon.png" alt="jambon" loading="lazy"><span id="totingr7">3</span> tranches - Jambon</summary>
-                <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy">Sel & poivre</summary>
-                
+                <div class="liste-ingredients">
+                    <summary><img src="/recettes/ingr/courgette.png" alt="Courgette" loading="lazy"><span id="totingr1">750</span>g - Courgettes</summary>
+                    <summary><img src="/recettes/ingr/Oeuf.png" alt="Oeuf" loading="lazy"><span id="totingr2">6</span> - Oeufs</summary>
+                    <summary><img src="/recettes/ingr/feculemais.png" alt="feculemais" loading="lazy"><span id="totingr3">3</span> C à S - Maïzena</summary>
+                    <summary><img src="/recettes/ingr/Lait.png" alt="Lait" loading="lazy"><span id="totingr4">1.5</span> verre - Lait</summary>
+                    <summary><img src="/recettes/ingr/cremefraiche.png" alt="cremefraiche" loading="lazy"><span id="totingr5">18</span> cl - Crème fraîche</summary>
+                    <summary><img src="/recettes/ingr/gruyere.png" alt="gruyere" loading="lazy"><span id="totingr6">150</span>g - Gruyère râpé</summary>
+                    <summary><img src="/recettes/ingr/jambon.png" alt="jambon" loading="lazy"><span id="totingr7">3</span> tranches - Jambon</summary>
+                    <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy">Sel & poivre</summary>
+                </div>
+                <button type="button" class="bp-replier" aria-expanded="true">Replier la liste</button>
+                <img class="photo-recette" src="/images/pasdephoto.png" alt="photo recette" loading="lazy">
         </nav>
-        <!-- ******************* Ingrédients ******************* -->
+    <!-- ******************* Ingrédients ******************* -->
+        <main>
+            <div class="cadre">
+                <p class="poub"></p>
+                <button type="button" class="fleche fleche--g" id="flecheG" aria-label="Étape précédente"></button>
+                <h1 class="titre-rec"> Flan de courgettes :</h1>
+                <button type="button" class="fleche fleche--d" id="flecheD" aria-label="Étape suivante"></button>
+                <p class="poub"></p>
+            </div>
+
+<p class="cptetapes" id="cptetapes" aria-live="polite"></p>            
+            <ol class="etapes" id="etapes">
+                    <li class="etape"> 
+                    <h2>Etape 1 :</h2>
+                        <p>- Eplucher & couper les courgettes</p>
+                        <p>- Les cuire à la vapeur</p>
+                        <p class="detail"><span id="totingrd1">750</span>g - Courgettes</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 2 :</h2>
+                        <p>- Délayer la Maïzena dans le lait & ajouter la crème fraîche</p>
+                        <p>- Ajouter les oeufs battus, le jambon, le gruyère</p>
+                        <p>- Saler, poivrer et ajouter les courgettes</p>
+                        <p class="detail"><span id="totingrd2">6</span> - Oeufs</p>
+                        <p class="detail"><span id="totingrd3">3</span> C à S - Maïzena</p>
+                        <p class="detail"><span id="totingrd4">1.5</span> verre - Lait</p>
+                        <p class="detail"><span id="totingrd5">18</span> cl - Crème fraîche</p>
+                        <p class="detail"><span id="totingrd6">150</span>g - Gruyère râpé</p>
+                        <p class="detail"><span id="totingrd7">3</span> tranches - Jambon</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 3 :</h2>
+                        <p>- Verser dans un plat à gratin beurré & fariné</p>
+                        <p>- Cuire au four pendant 30 minutes à 210°C</p>
+                        <p class="detail"></p>
+                    </li>
+            </ol>
+        </main>
     </div>
 </body>    
 </html>

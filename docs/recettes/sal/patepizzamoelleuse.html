@@ -12,28 +12,12 @@
 </head>
 
 <script src="/recettes/NbPates.js" defer></script>
+<script src="/recettes/cuisinons.js" defer></script>
+<script src="/recettes/defiltuiles.js" defer></script>
 
-<body>
+<body class="page-recettes">
  <div class="conteneur">
-        <main>
-            <div class="etapes">
-                <h1>Pâte à pizza moelleuse :</h1>
-                    <h2>Etape 1 :</h2>
-                        <p>- Mettre la farine dans un saladier</p>
-                        <p>- Faire un puit et sabler fin (frotter entre les doigts)</p>
-                    <h2>Etape 2 :</h2>
-                        <p>- Refaire un puit et y verser le sel, le sucre, la levure et l'eau</p>
-                        <p>> Ne pas ajouter l'eau trop vite pour ne pas que la pâte soit trop liquide !</p>
-                    <h2>Etape 3 :</h2>
-                        <p>- Travailler la pâte jusqu'à obtenir une boule</p>
-                    <h2>Etape 4 : (étape optionnelle)</h2>
-                    <p>- Fariner le saladier et couvrir pour laisser la pâte monter pendant 1h30</p>
-            </div>
-            <a href="/recettes/sale.html" class="bpnavig">&#8617 Retour</a>
-        </main>
-
-        
-        <!-- ******************* Ingrédients ******************* -->
+    <!-- ******************* Ingrédients ******************* -->
          <nav class="somm ingredients">
             <!-- ******* valeurs initiales pour 1 personne ******* -->
             <div id="ingr1" data-poids="125"></div>
@@ -52,23 +36,72 @@
             <div id="ingr14" data-poids="0"></div>
             <div id="ingr15" data-poids="0"></div>
             <!-- ******* valeurs initiales pour 1 personne ******* -->
-             
             <h2>Ingrédients</h2>
-            <div class="cptnbpers">
-                <button onclick="CalcPates(-1)">-</button>
-                <span id="nbPates">1</span>
-                <button onclick="CalcPates(1)">+</button>
+            <div class="barre-bp">
+                <div class="bp-g">
+                    <a href="/recettes/sale.html" class="bpgauche">&#10008<br>Retour</a>
+                </div>
+                <div class="cptnbpers">
+                    <button onclick="CalcPates(-1)">-</button>
+                    <span id="nbPates">1</span>
+                    <button onclick="CalcPates(1)">+</button>
+                </div>
+                <div class="bp-d">
+                    <button type="button" class="bpdroit" id="bpCuisine" aria-pressed="false">&#9658<br>Lancer</button>
+                </div>
             </div>
-            <h2>Pâte à pizza</h2>
-
-                <summary><img src="/recettes/ingr/eau.png" alt="eau" loading="lazy"><span id="totingr1">125</span>g - Eau tiède</summary>
-                <summary><img src="/recettes/ingr/huileol.png" alt="huileol" loading="lazy"><span id="totingr2">25</span>g - Huile olive</summary>
-                <summary><img src="/recettes/ingr/farine.png" alt="farine" loading="lazy"><span id="totingr3">250</span>g - Farine</summary>
-                <summary><img src="/recettes/ingr/levurechimique.png" alt="levurechimique" loading="lazy"><span id="totingr4">0.5</span> sachet - Levure chimique</summary>
-                <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr5">1</span> morceau - Sucre</summary>
-                <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr6">1</span> pincée -Sel</summary>
+            <h2>Pâtes</h2>
+                <div class="liste-ingredients">
+                    <summary><img src="/recettes/ingr/eau.png" alt="eau" loading="lazy"><span id="totingr1">125</span>g - Eau tiède</summary>
+                    <summary><img src="/recettes/ingr/huileol.png" alt="huileol" loading="lazy"><span id="totingr2">25</span>g - Huile olive</summary>
+                    <summary><img src="/recettes/ingr/farine.png" alt="farine" loading="lazy"><span id="totingr3">250</span>g - Farine</summary>
+                    <summary><img src="/recettes/ingr/levurechimique.png" alt="levurechimique" loading="lazy"><span id="totingr4">0.5</span> sachet - Levure chimique</summary>
+                    <summary><img src="/recettes/ingr/sucre.png" alt="sucre" loading="lazy"><span id="totingr5">1</span> morceau - Sucre</summary>
+                    <summary><img src="/recettes/ingr/sel.png" alt="sel" loading="lazy"><span id="totingr6">1</span> pincée -Sel</summary>
+                </div>
+                <button type="button" class="bp-replier" aria-expanded="true">Replier la liste</button>
+                <img class="photo-recette" src="/images/pasdephoto.png" alt="photo recette" loading="lazy">
         </nav>
-        <!-- ******************* Ingrédients ******************* -->
+    <!-- ******************* Ingrédients ******************* -->
+        <main>
+            <div class="cadre">
+                <p class="poub"></p>
+                <button type="button" class="fleche fleche--g" id="flecheG" aria-label="Étape précédente"></button>
+                <h1 class="titre-rec"> Pâte à pizza moelleuse :</h1>
+                <button type="button" class="fleche fleche--d" id="flecheD" aria-label="Étape suivante"></button>
+                <p class="poub"></p>
+            </div>
+
+            <p class="cptetapes" id="cptetapes" aria-live="polite"></p>            
+            <ol class="etapes" id="etapes">
+                    <li class="etape"> 
+                    <h2>Etape 1 :</h2>
+                        <p>- Mettre la farine dans un saladier</p>
+                        <p>- Faire un puit et sabler fin avec l'huile d'olive (frotter entre les doigts)</p>
+                        <p class="detail"><span id="totingrd3">250</span>g - Farine</p>
+                        <p class="detail"><span id="totingrd2">25</span>g - Huile olive</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 2 :</h2>
+                        <p>- Refaire un puit et y verser le sel, le sucre, la levure et l'eau</p>
+                        <p>> Ne pas ajouter l'eau trop vite pour ne pas que la pâte soit trop liquide !</p>
+                        <p class="detail"><span id="totingrd6">1</span> pincée -Sel</p>
+                        <p class="detail"><span id="totingrd5">1</span> morceau - Sucre</p>
+                        <p class="detail"><span id="totingrd4">0.5</span> sachet - Levure chimique</p>
+                        <p class="detail"><span id="totingrd1">125</span>g - Eau tiède</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 3 :</h2>
+                        <p>- Travailler la pâte jusqu'à obtenir une boule</p>
+                        <p class="detail"><span id="totingrd1">80</span>g - Eau tiède</p>
+                    </li>
+                    <li class="etape">   
+                        <h2>Etape 4 : (étape optionnelle)</h2>
+                        <p>- Fariner le saladier et couvrir pour laisser la pâte monter pendant 1h30</p>
+                        <p class="detail"></p>
+                    </li>
+            </ol>
+        </main>    
     </div>
 </body>    
 </html>
