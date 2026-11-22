@@ -11,6 +11,10 @@
         flex-shrink: 1; /* autorise de rétrécir */
         position: static; /* désactive l'option sticky */
     }
+  .photo-recette {
+        width: 100%;
+        position: static;
+  }
     /* Liens de navigation */
     .bpnavig {
         position: static;
