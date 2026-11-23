@@ -13,7 +13,9 @@
     }
   .photo-recette {
         width: 100%;
+        height: auto;
         position: static;
+        aspect-ratio: 1;
   }
     /* Liens de navigation */
     .bpnavig {
