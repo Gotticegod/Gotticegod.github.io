@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="/CSS/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recettes coktails</title>
+</head> 
+
+<body>
+ <div class="conteneur">
+        <main>
+            <h1>Recettes coktails :</h1>
+            <table class="tableauliens">
+                <colgroup>
+                    <col style="width: 85%">   <!-- colonne 1 -->
+                    <col style="width: 15%">   <!-- colonne 2 -->
+                    <col style="width: 0%">   <!-- colonne 2b -->
+                    <col style="width: 0%">   <!-- colonne 3 -->
+                    <col style="width: 0%">   <!-- colonne 3b -->
+                    <col style="width: 0%">   <!-- colonne 4 -->
+                    <col style="width: 0%">   <!-- colonne 4b -->
+                    <col style="width: 0%">   <!-- colonne 5 -->
+                </colgroup>
+                <tr>
+                    <th class="titre1">Nom recette</th>
+                    <th class="titre2">Préparation</th>
+                    <th class="titre2"></th>
+                    <th class="titre2"></th>
+                    <th class="titre2"></th>
+                    <th class="titre2"></th>
+                    <th class="titre2"></th>
+                    <th class="titre2"></th>
+                </tr>
+                <tr>
+                    <td class="cell1"><a href="/recettes/cok/libre.html">libre</a></td>
+                    <td class="cell2">15m</td>
+                    <td class="cell2"></td>
+                    <td class="cell2"></td>
+                    <td class="cell2"></td>
+                    <td class="cell2"></td>
+                    <td class="cell2"></td>
+                    <td class="cell2"></td>
+                </tr>
+                
+            </table>
+            <a href="/index.html" class="bpnavig">&#8617 Retour</a>
+        </main>
+        
+        <!-- ******************* Sommaire ******************* -->
+        <div id="sommaire"></div>
+        <!-- ******************* Sommaire ******************* -->
+
+    </div>
+
+    <!-- Charge le script sommaire : defer = attend que le HTML soit prêt avant de s'exécuter -->
+    <script src="/sommaire.js" data-categorie="recettes" defer></script>
+</body>    
+</html>

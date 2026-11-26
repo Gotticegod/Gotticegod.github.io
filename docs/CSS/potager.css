@@ -1,0 +1,52 @@
+/* ============================================================*/
+/* =============     CALENDRIER PLANTATIONS       =============*/
+/* ============================================================*/
+.cal-potager {
+    table-layout: fixed;    /* respecte les largeurs définies */
+    width: 100%;
+    background: rgba(204, 17, 17, 0.733); /* fond rouge avec 90% d'opacité */
+    padding: 10px; /* écart entre bord et intérieur */
+    border: 2px solid white;
+    border-radius: 20px; /* coins arrondis */
+    height: fit-content; /* hauteur s'ajuste au contenu */
+    position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
+    top: 20px; /* position mini haut de l'écran */
+    margin-bottom: 20px;
+    padding-top: clamp(50px, 5vw, 80px);
+}
+.cal-potager th {
+    border: none;
+    vertical-align: middle;
+    font-size: clamp(1rem, 2vw, 2.5rem);
+    padding: clamp(5px, 1vw, 15px);
+}
+.cal-potager td {
+    border: none;
+    vertical-align: middle;
+    font-size: clamp(0.8rem, 1.8vw, 2rem);
+    padding: clamp(5px, 1vw, 15px);
+    margin: clamp(2px, 1vw, 5px);
+}
+.cal-potager .titre1, .cell1 {
+    text-align: center;
+}
+.cal-potager .cell2 {
+    text-align: center;
+}
+.cal-potager .titre2 {
+    text-align: left;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg)
+    /*transform-origin: bottom center;*/
+}
+.cal-potager a {
+    color: rgb(211, 104, 4);
+    font-weight: bold;
+    text-decoration: none;
+}
+.cal-potager a:hover {
+    color: rgb(204, 17, 17);
+    background-color: rgb(211, 104, 4);
+    font-weight: bold;
+    text-decoration: none;
+}
