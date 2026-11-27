@@ -1,13 +1,17 @@
 /* ============================================================*/
 /* =============     CALENDRIER PLANTATIONS       =============*/
 /* ============================================================*/
+
 .cal-potager {
     table-layout: fixed;    /* respecte les largeurs définies */
     width: 100%;
     background: rgba(204, 17, 17, 0.733); /* fond rouge avec 90% d'opacité */
     padding: 10px; /* écart entre bord et intérieur */
-    border: 2px solid white;
+    border-collapse: separate;
+    border-spacing: 0; /* supprime les espaces entre les cellules */
+    border: 2px solid #ccc;
     border-radius: 20px; /* coins arrondis */
+    overflow: hidden; /* clippe les fonds des coins arrondis */
     height: fit-content; /* hauteur s'ajuste au contenu */
     position: sticky; /* la sidebar reste visible à l'écran pendant le défilement */
     top: 20px; /* position mini haut de l'écran */
@@ -15,17 +19,42 @@
     padding-top: clamp(50px, 5vw, 80px);
 }
 .cal-potager th {
-    border: none;
+    border-left: 3px solid #000000;
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #000000;
     vertical-align: middle;
     font-size: clamp(1rem, 2vw, 2.5rem);
+    color: rgb(255, 255, 255);
     padding: clamp(5px, 1vw, 15px);
 }
 .cal-potager td {
-    border: none;
+    border-right: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     vertical-align: middle;
     font-size: clamp(0.8rem, 1.8vw, 2rem);
-    padding: clamp(5px, 1vw, 15px);
+    padding: clamp(5px, 1vw, 5px);
+    padding-left: 0px;
+    padding-right: 0px;
     margin: clamp(2px, 1vw, 5px);
+}     
+/* Première colonne */
+th:first-child {
+    border-right: 3px solid #000000; 
+    border-bottom: 3px solid #000000;
+    border-left: none;
+    border-top: none;
+} 
+td:first-child {
+    border-right: 1px solid #000000;
+    border-left: 3px solid #000000;
+    padding-left: 5px;
+}
+/* Dernière colonne */
+td:last-child {
+    border-right: 3px solid #000000;
+}
+tr:last-child td {
+    border-bottom: 3px solid #000000;
 }
 .cal-potager .titre1, .cell1 {
     text-align: center;
@@ -50,20 +79,17 @@
     font-weight: bold;
     text-decoration: none;
 }
-
-.ligne {
-    display: block;
-    height: 2px;
-    width: 100%;
-    margin: 4px 0;
-    visibility: hidden;      /* caché par défaut */
+/* préparation de chaque cellule du tableau avec 3 lignes transparentes */
+.cell {
+    --l1: transparent;
+    --l2: transparent;
+    --l3: transparent;
+    background:
+        linear-gradient(var(--l1), var(--l1)) top    left / 100% 34% no-repeat,
+        linear-gradient(var(--l2), var(--l2)) center left / 100% 34% no-repeat,
+        linear-gradient(var(--l3), var(--l3)) bottom left / 100% 34% no-repeat;
 }
-
-.l1 { background: red; }
-.l2 { background: blue; }
-.l3 { background: green; }
-
-/* Affichage conditionnel via une classe sur le td */
-td.actif-l1 .l1 { visibility: visible; }
-td.actif-l2 .l2 { visibility: visible; }
-td.actif-l3 .l3 { visibility: visible; }
+/* passage de la couleur si classe actif-lx détectée */
+.cell.actif-l1 { --l1: rgb(225, 241, 2); }
+.cell.actif-l2 { --l2: rgb(228, 67, 3); }
+.cell.actif-l3 { --l3: rgb(3, 146, 3); }
