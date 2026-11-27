@@ -50,3 +50,20 @@
     font-weight: bold;
     text-decoration: none;
 }
+
+.ligne {
+    display: block;
+    height: 2px;
+    width: 100%;
+    margin: 4px 0;
+    visibility: hidden;      /* caché par défaut */
+}
+
+.l1 { background: red; }
+.l2 { background: blue; }
+.l3 { background: green; }
+
+/* Affichage conditionnel via une classe sur le td */
+td.actif-l1 .l1 { visibility: visible; }
+td.actif-l2 .l2 { visibility: visible; }
+td.actif-l3 .l3 { visibility: visible; }
